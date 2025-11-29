@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(230, 170, 20);
+    color: white;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Einheitlicher Inhalts-Container */
+.container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    max-width: 90%;
+    margin: 0 0 2rem 0;
+    line-height: 2rem;
+    text-align: center;
+}
+
+h1 {
+    text-shadow: 0px 5px 5px rgb(127, 127, 127);
+}
+
+.hello {
+    font-size: 5rem;
+    margin: 0;
+}
+
+.bego {
+    font-size: 6rem;
+    margin: 0 0 5rem 0;
+}
+
+.mein-name {
+    letter-spacing: 6px;
+}
+
+.name {
+    font-family: "Russo One", sans-serif;
+    font-size: 2rem;
+    text-shadow: 0px 3px 3px rgb(127, 127, 127);
+}
+
+.name-zr {
+    letter-spacing: 5px;
+}
+
+.deko1 {
+    background-color: white;
+    height: 1px;
+    width: 82%;
+    margin: 0 0 2rem 0;
+}
+
+.das-ist {
+    letter-spacing: 3px;
+}
+
+.unterst {
+    letter-spacing: 8px;
+}
+
+.name-proj {
+    letter-spacing: 16px;
+}
+
+
+.arrow {
+    font-size: 2.5rem;
+    animation: bounce 1s infinite ease-in-out;
+    margin-top: 2rem;
+}
+
+.arrow-circle {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounce 1s infinite ease-in-out;
+    margin-top: 1.5rem;
+}
+
+.action-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+
+.left-text, .right-text {
+    font-family: sans-serif;
+    font-size: 1rem;
+    /*color: white;*/
+    margin-top: 5rem;
+}
+
+
+/* Mobile: "tippen" anzeigen, "klicken" verstecken */
+.mobile {
+    display: inline;
+}
+
+.desktop {
+    display: none;
+}
+
+
+/* Button reset */
+.arrow-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(12px); }
+}
+
+
+@media (min-width: 768px) {
+    .container { max-width: 500px; }
+
+    h1 { font-size: 6rem; }
+
+    p { font-size: 1.5rem; max-width: 600px; }
+
+    .mein-name {letter-spacing: 4px;}
+    .deko1 { width: 52%; }
+    .das-ist { letter-spacing: 1px; }
+    .unterst { letter-spacing: 6px; }
+    .arrow { font-size: 3rem; }
+
+    /* Desktop: "klicken" anzeigen, "tippen" verstecken */
+    .mobile { display: none; }
+    .desktop { display: inline; }
+}
