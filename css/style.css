@@ -89,7 +89,7 @@ img {
     font-size: 1rem;
     line-height: 2rem;
     max-width: 400px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 .mein-name {
@@ -97,7 +97,7 @@ img {
 }
 .name {
     font-family: "Russo One", sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-shadow: 0px 2px 3px rgb(127, 127, 127);
 }
 .name-zr {
@@ -106,8 +106,8 @@ img {
 .deko1 {
     background-color: white;
     height: 1px;
-    width: 33%;
-    margin-bottom: 1.8rem;
+    width: 50%;
+    margin-bottom: 1.5rem;
 }
 .das-ist {
     letter-spacing: 3px;
