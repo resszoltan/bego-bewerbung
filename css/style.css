@@ -208,7 +208,7 @@ img {
 .card[data-card="zertifikate"] {
     background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
     /*background-color: rgb(230, 170, 20);*/
-    *color: #333;*
+    color: #333;
 }
 .card[data-card="zertifikate"] h2 {
     font-size: 2.5rem;
