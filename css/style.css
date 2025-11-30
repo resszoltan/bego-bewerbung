@@ -83,6 +83,7 @@ img {
     font-style: normal;
     font-size: 5rem;
     margin-bottom: 4rem;
+    color: red;
 }
 .card[data-card="landing"] p {
     font-family: sans-serif;
@@ -350,4 +351,5 @@ img {
     /* Landing Page Arrow Text - Desktop: "tippen" anzeigen, "klicken" verstecken */
     .mobile { display: none; }
     .desktop { display: inline; }
+
 }
