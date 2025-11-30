@@ -83,7 +83,6 @@ img {
     font-style: normal;
     font-size: 5rem;
     margin-bottom: 4rem;
-    color: red;
 }
 .card[data-card="landing"] p {
     font-family: sans-serif;
@@ -98,7 +97,7 @@ img {
 }
 .name {
     font-family: "Russo One", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-shadow: 0px 2px 3px rgb(127, 127, 127);
 }
 .name-zr {
@@ -351,5 +350,4 @@ img {
     /* Landing Page Arrow Text - Desktop: "tippen" anzeigen, "klicken" verstecken */
     .mobile { display: none; }
     .desktop { display: inline; }
-
 }
