@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page</title><link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Portfolio: Zoltan Ress</title><link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Russo+One&display=swap">
@@ -14,43 +14,246 @@
 
   <body>
 
-    <div class="container">
+    <div class="viewport">
+      <div class="grid-container" id="gridContainer">
 
-      <h1 class="hello">HELLO</h1>
-      <h1 class="bego">BEGO</h1>
+        <!-- Card 1 - Leer ------------------------------------------------ -->
+        <div class="card card-1"></div>
 
-      <p>
-        <span class="mein-name">Mein &nbsp; Name &nbsp; ist</span><br>
-        <span class="name name-zr" style="letter-spacing: 5px;">Zoltan Ress</span>
-      </p>
 
-      <hr class="deko1">
-      
-      <p>
-        <span class="das-ist">und das ist ein kleines</span> 
-        <span class="unterst">Unterstützungs-</span> 
-        <span class="name name-proj">PROJEKT</span>
-      </p>
 
-      <div class="action-row">
-        <span class="left-text">Hier</span>
+        <!-- Card 2 - Landing Page ------------------------------------------------ -->
+        <div class="card card-2">
+          <!-- Titel -->
+          <h1 class="hello">HELLO</h1>
+          <h1 class="bego">BEGO</h1>
 
-        <button class="arrow-button">
-          <div class="arrow-circle">
-            <svg class="arrow" width="50" height="50" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
-              <path d="M12 6v12m0 0l-4-4m4 4l4-4"
-              stroke="rgb(127,127,127)" stroke-width="3" fill="none"
-              stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
+          <!-- Begrüßung A -->
+          <p>
+            <span class="mein-name">mein &nbsp; Name &nbsp; ist</span><br>
+            <span class="name name-zr" style="letter-spacing: 5px;">Zoltan Ress</span>
+          </p>
+
+          <hr class="deko1">
+          
+          <!-- Begrüßung B -->
+          <p>
+            <span class="das-ist">und das ist ein kleines</span> 
+            <span class="unterst">Unterstützungs-</span> 
+            <span class="name name-proj">PROJEKT</span>
+          </p>
+
+          <!-- Navigation 2.1 -->
+          <div class="action-row">
+            <!-- Text 1 -->
+            <span class="left-text">Hier</span>
+
+            <!-- Down button -->
+            <button class="arrow-button" onclick="navigateTo(5)">
+              <div class="arrow-circle arrow-bounce-down">
+                <svg class="arrow arrow-bounce-down" width="50" height="50" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                  <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                  stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+            </button>
+
+            <!-- Text 2, mit alternatives Einblenden -->
+            <span class="right-text mobile">tippen</span>
+            <span class="right-text desktop">klicken</span>
           </div>
-        </button>
+        </div>
 
-        <span class="right-text mobile">tippen</span>
-        <span class="right-text desktop">klicken</span>
-      </div>
 
-    </div>
+
+        <!-- Card 3 - Leer ------------------------------------------------ -->
+        <div class="card card-3"></div>
+
+
+
+        <!-- Card 4 - Der ITler ------------------------------------------------ -->
+        <div class="card card-4">
+          <h2>Der ITler</h2>
+
+          <div class="content">
+              <p>Hier kommt dein ITler-Content. Beschreibe deine technischen Fähigkeiten, Erfahrungen und Leidenschaft für Softwareentwicklung.</p>
+          </div>
+
+          <!-- Navigation 4.1 (Down button) -->
+          <button class="arrow-button" onclick="navigateTo(7)">
+            <div class="arrow-circle arrow-bounce-down">
+              <svg class="arrow arrow-bounce-down" width="50" height="50" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </button>
+        </div>
+
+
+
+        <!-- Card 5 - Choose Your Character ------------------------------------------------ -->
+        <div class="card card-5">
+          
+          <!-- Navigation 5.1 (Home button) -->
+          <button class="arrow-button" id="homeButton" onclick="navigateTo(2)">
+            <div class="arrow-circle">
+              <svg class="arrow" width="50" height="50" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </button>
+
+          <h2>Choose Your Character</h2>
+
+          <div class="content">
+              <p>Hier kannst du verschiedene Charaktere oder Rollen vorstellen, die du in deiner Karriere eingenommen hast.</p>
+          </div>
+
+          <!-- Navigation 5.2 (To the left button) -->
+          <button class="arrow-button" onclick="navigateTo(4)">
+            <div class="arrow-circle arrow-bounce-left">
+              <svg class="arrow arrow-bounce-left" width="50" height="50" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </button>
+
+          <!-- Navigation 5.3 (To the right button) -->
+          <button class="arrow-button" onclick="navigateTo(6)">
+            <div class="arrow-circle arrow-bounce-right">
+              <svg class="arrow arrow-bounce-right" width="50" height="50" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </button>
+        </div>
+
+
+        <!-- Card 6 - Der Jurist ------------------------------------------------ -->
+        <div class="card card-6">
+          <h2>Der Jurist</h2>
+
+          <div class="content">
+              <p>Hier kannst du deine juristischen Kenntnisse und Erfahrungen präsentieren.</p>
+          </div>
+
+          <!-- Navigation 6.1 (Down button) -->
+          <button class="arrow-button" onclick="navigateTo(9)">
+            <div class="arrow-circle arrow-bounce-down">
+              <svg class="arrow arrow-bounce-down" width="50" height="50" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </button>
+        </div>
+
+
+        <!-- Card 7 - Angewandte Technologien ------------------------------------------------ -->
+        <div class="card card-7">
+          <h2>Angewandte Technologien</h2>
+
+          <div class="content">
+              <p>Hier kannst du die Technologien und Tools vorstellen, die du in deinen Projekten verwendet hast.</p>
+          </div>
+
+          <!-- Navigation 7.1 (End button) -->
+          <button class="arrow-button" onclick="navigateTo(8)">
+            <div class="arrow-circle">
+              <svg class="arrow" width="50" height="50" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </button>
+        </div>
+
+
+
+        <!-- Card 8 - Danke schön! ------------------------------------------------ -->
+        <div class="card card-8">
+          <h2>Danke schön!</h2>
+
+          <div class="content">
+              <p>Vielen Dank für deine Zeit und dein Interesse an meinem Portfolio!</p>
+          </div>
+
+          <!-- Navigation 8.1 (Repeat button) -->
+          <button class="arrow-button" onclick="navigateTo(5)">
+            <div class="arrow-circle">
+              <svg class="arrow" width="50" height="50" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </button>
+
+          <div class="content">
+              <p><br><br>oder</p>
+          </div>
+
+          <!-- Navigation 8.2 (Home button) -->
+          <button class="arrow-button" onclick="navigateTo(2)">
+            <div class="arrow-circle">
+              <svg class="arrow" width="50" height="50" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </button>
+        </div>
+
+
+
+        <!-- Card 9 - Zertifikate ------------------------------------------------ -->
+        <div class="card card-9">
+          <h2>Zertifikate</h2>
+
+          <div class="content">
+              <p>Hier kannst du deine erworbenen Zertifikate und Qualifikationen präsentieren.</p>
+          </div>
+          
+          <!-- Navigation 9.1 (End button) -->
+          <button class="arrow-button" onclick="navigateTo(8)">
+            <div class="arrow-circle">
+              <svg class="arrow" width="50" height="50" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </button>
+        </div>
+
+      </div> <!-- Close "grid-container" -->
+    </div> <!-- Close "viewport" -->
+
+
+
+    <script src="js/script.js"></script>
 
   </body>
 
