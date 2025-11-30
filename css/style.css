@@ -1,17 +1,18 @@
 /* -----------------------------------------------------------
     CSS für persönliche Portfolio-Seite
     Autor: Zoltan Ress
-    Datum: 2025-11-29
+    Datum: 2025-11-30
 ----------------------------------------------------------- */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white
+    color: white;
 }
 
-body {font-family: "Russo One", sans-serif;
+body {
+    font-family: "Russo One", sans-serif;
     font-weight: 400;
     font-style: normal;
     overflow: hidden;
@@ -25,17 +26,11 @@ body {font-family: "Russo One", sans-serif;
     overflow: hidden;
 }
 
-.grid-container {
-    position: absolute;
-    width: 300vw;
-    height: 300vh;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
 
 .card {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     padding: 40px 20px;
@@ -44,27 +39,33 @@ body {font-family: "Russo One", sans-serif;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Card Positions - wie NumPad Layout */
-.card-1 { left: 0; top: 200vh; }      /* Zeile 3, Spalte 1 */
-.card-2 { left: 100vw; top: 200vh; }  /* Zeile 3, Spalte 2 - Landing page */
-.card-3 { left: 200vw; top: 200vh; }  /* Zeile 3, Spalte 3 */
-.card-4 { left: 0; top: 100vh; }      /* Zeile 2, Spalte 1 - Der ITler */
-.card-5 { left: 100vw; top: 100vh; }  /* Zeile 2, Spalte 2 - Choose your character */
-.card-6 { left: 200vw; top: 100vh; }  /* Zeile 2, Spalte 3 - Der Jurist */
-.card-7 { left: 0; top: 0; }          /* Zeile 1, Spalte 1 - Technologien */
-.card-8 { left: 100vw; top: 0; }      /* Zeile 1, Spalte 2 - Dankeschön */
-.card-9 { left: 200vw; top: 0; }      /* Zeile 1, Spalte 3 - Zertifikate */
+/* Drei-Schichten-System */
+/* Schicht 1 (Lager): z-index 1 - nicht sichtbare Cards */
+.card {
+    z-index: 1;
+}
+
+/* Schicht 2 (Nächste Card): z-index 50 - wird als nächstes sichtbar */
+.card.next-card {
+    z-index: 50;
+}
+
+/* Schicht 3 (Aktuelle Card): z-index 100 - aktuell sichtbar */
+.card.current-card {
+    z-index: 100;
+}
 
 
 
-/* Card 2 - Landing Page ------------------------------------------------- */
-.card-2 {
+/* Landing Page -------------------------------------------- */
+.card[data-card="landing"] {
     background-color: rgb(230, 170, 20);
 }
-.card-2 h1 {
-    text-shadow: 0px 5px 5px rgba(127,127,127);
+.card[data-card="landing"] h1 {
+    text-shadow: 0px 4px 5px rgb(127, 127, 127);
 }
 .hello {font-family: "Russo One", sans-serif;
     font-weight: 400;
@@ -78,12 +79,11 @@ body {font-family: "Russo One", sans-serif;
     font-size: 6rem;
     margin-bottom: 5rem;
 }
-.card-2 p {
+.card[data-card="landing"] p {
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
-    max-width: 90%;
-    max-width: 500px;
+    max-width: 400px;
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -93,7 +93,7 @@ body {font-family: "Russo One", sans-serif;
 .name {
     font-family: "Russo One", sans-serif;
     font-size: 2rem;
-    text-shadow: 0px 3px 3px rgb(127, 127, 127);
+    text-shadow: 0px 2px 3px rgb(127, 127, 127);
 }
 .name-zr {
     letter-spacing: 5px;
@@ -116,34 +116,17 @@ body {font-family: "Russo One", sans-serif;
 
 
 
-/* Card 4 - Der ITler ------------------------------------------------- */
-.card-4 {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
-.card-4 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 4rem;
-}
-.card-4 .content {
-    max-width: 500px;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    line-height: 2rem;
-}
-
-
-
-/* Card 5 - Choose Your Character ------------------------------------------------- */
-.card-5 {
+/* Choose Your Character ------------------------------------ */
+.card[data-card="choose"] {
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
-.card-5 h2 {
-    font-size: 2.5rem;
+.card[data-card="choose"] h2 {
+    font-size: 3rem;
     margin-bottom: 4rem;
+    text-shadow: 0px 3px 3px rgb(127, 127, 127);
 }
-/* IST WIE .card-2 p???... */
-.card-5 .content {
-    max-width: 500px;
+.card[data-card="choose"] .content {
+    max-width: 400px;
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
@@ -151,16 +134,35 @@ body {font-family: "Russo One", sans-serif;
 
 
 
-/* Card 6 - Der Jurist ------------------------------------------------- */
-.card-6 {
+/* Der ITler ------------------------------------------------ */
+.card[data-card="itler"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.card[data-card="itler"] h2 {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    text-shadow: 0px 3px 3px rgb(127, 127, 127);
+}
+.card[data-card="itler"] .content {
+    max-width: 400px;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+
+
+/* Der Jurist ----------------------------------------------- */
+.card[data-card="jurist"] {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
-.card-6 h2 {
+.card[data-card="jurist"] h2 {
     font-size: 2.5rem;
     margin-bottom: 4rem;
+    text-shadow: 0px 3px 3px rgb(127, 127, 127);
 }
-.card-6 .content {
-    max-width: 500px;
+.card[data-card="jurist"] .content {
+    max-width: 400px;
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
@@ -168,16 +170,17 @@ body {font-family: "Russo One", sans-serif;
 
 
 
-/* Card 7 - Angewandte Technologien ------------------------------------------------- */
-.card-7 {
+/* Angewandte Technologien ---------------------------------- */
+.card[data-card="tech"] {
     background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
 }
-.card-7 h2 {
+.card[data-card="tech"] h2 {
     font-size: 2.5rem;
     margin-bottom: 4rem;
+    text-shadow: 0px 3px 3px rgb(127, 127, 127);
 }
-.card-7 .content {
-    max-width: 500px;
+.card[data-card="tech"] .content {
+    max-width: 400px;
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
@@ -186,54 +189,19 @@ body {font-family: "Russo One", sans-serif;
 
 
 
-/* Card 8 - Danke schön! ------------------------------------------------- */
-.card-8 {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-}
-.card-8 h2 {
-    font-size: 2.5rem;
-    margin-bottom: 4rem;
-}
-.card-8 .content {
-    max-width: 500px;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    line-height: 2rem;
-}
-.home-button {
-    margin-top: 2rem;
-    padding: 15px 40px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 3px solid white;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-.home-button:hover {
-    background-color: white;
-    color: #333;
-    transform: scale(1.05);
-}
-
-
-
-/* Card 9 - Zertifikate ------------------------------------------------- */
-.card-9 {
+/* Zertifikate ---------------------------------------------- */
+.card[data-card="zertifikate"] {
     background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
     color: #333;
 }
-.card-9 h2 {
+.card[data-card="zertifikate"] h2 {
     font-size: 2.5rem;
     margin-bottom: 4rem;
     color: #333;
+    text-shadow: 0px 3px 3px rgb(127, 127, 127);
 }
-.card-9 .content {
-    max-width: 500px;
+.card[data-card="zertifikate"] .content {
+    max-width: 400px;
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
@@ -241,30 +209,44 @@ body {font-family: "Russo One", sans-serif;
 }
 
 
-/* Button Style */ /* Das muss geändert sein! Ähnliche Buttons sind nötig wie der Arrow-Button: ein Symbol auf einem Kreis */
-.end-button {
-    margin-top: 2rem;
-    padding: 15px 40px;
+
+/* Danke schön ---------------------------------------------- */
+.card[data-card="ende"] {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+.card[data-card="ende"] h2 {
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    text-shadow: 0px 3px 3px rgb(127, 127, 127);
+}
+.card[data-card="ende"] .content {
+    max-width: 400px;
+    font-family: sans-serif;
     font-size: 1.2rem;
-    font-weight: 700;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 3px solid white;
-    border-radius: 50px;
+    line-height: 2rem;
+}
+
+
+/* Home Button --------------------------------------------- */
+.home-button {
+    border: none;
+    background: none;
+    padding: 0;
     cursor: pointer;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    opacity: 0;
+    pointer-events: none;
 }
-.end-button:hover {
-    background-color: white;
-    color: #333;
-    transform: scale(1.05);
+.home-button.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.home-as-top {
+    position: absolute;
+    top: 0;
 }
 
 
-
-/* Arrow animation -------------------------------------------------- */
+/* Arrow Animations ----------------------------------------- */
 /* Text um den Button herum */
 .action-row {
     display: flex;
@@ -299,11 +281,17 @@ body {font-family: "Russo One", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem; /* Sollte das nicht mit dem .arrow margin-top gleich sein???... */ /* Und was ist mit den horizontalen Pfeilen???... */
+    margin-top: 2rem;
 }
 .arrow {
     font-size: 2.5rem;
-    margin-top: 2rem; /* Sollte das nicht mit dem .arrow-circle margin-top gleich sein???... */ /* Und was ist mit den horizontalen Pfeilen???... */
+    margin-top: 2rem;
+}
+.arrow-left {
+    transform: rotate(-90deg);
+}
+.arrow-right {
+    transform: rotate(90deg);
 }
 /* Mögliche Arrow-Animationen */
 .arrow-bounce-down {
@@ -329,19 +317,39 @@ body {font-family: "Russo One", sans-serif;
 }
 
 
+/* Media Query ---------------------------------------------- */
+@media (min-width: 1024px) {
+    /*.card[data-card="landing"] h1 {
+        font-size: 10rem;
+    }*/
 
-/* Media Query ------------------------------------------------- */
-@media (min-width: 768px) {
-    .container { max-width: 500px; } /* Möglicherweise wird nicht gebraucht... */
+    /*.card p,    Wahrscheinlich wird nicht gebraucht
+    .card .content {    He???...
+        font-size: 1.3rem;
+    }*/
 
-    h1 { font-size: 6rem; } /* Möglicherweise wird anders bezeichnet, mit "card-2 h1" und werden noch "card-4 h2", "card-5 h2* usw. gebraucht... */
+    /*.card h2 {  /* Haben wir auch nicht...
+        font-size: 3rem;
+    }*/
 
-    p { font-size: 1.5rem; max-width: 600px; } /* Möglicherweise wird anders bezeichnet als "card-2 p", "card-4 p" usw. ... */
+    /*.bounce-arrow {  Muss ich noch nachgucken...
+        font-size: 3.5rem;
+    }*/
 
-    .mein-name {letter-spacing: 4px;}
-    .deko1 { width: 52%; }
+    /* Landing Page Main Text */
+    /*h1 { font-size: 6rem; } Möglicherweise wird anders bezeichnet wie .card[data-card="landing"] h1 usw. ... Nee, wird nicht gebraucht. */
+
+    /*p { font-size: 1.5rem; max-width: 600px; } Möglicherweise wird anders bezeichnet wie .card[data-card="landing"] p usw. ... Nee, wird nicht gebraucht. */
+
+    .hello { font-size: 7em; letter-spacing: 5px;}
+    .bego { font-size: 9rem;}
+    .card[data-card="landing"] p { font-size: 2.4rem; max-width: 600px;}
+    .mein-name {letter-spacing: 6px;}
+    .name { font-size: 3.5rem; line-height: 5rem; }
+    .deko1 { width: 16%; height: 3px;}
     .das-ist { letter-spacing: 1px; }
-    .unterst { letter-spacing: 6px; }
+    .unterst { letter-spacing: 8px; line-height: 5rem;}
+    .name-proj { letter-spacing: 21px;}
     .arrow { font-size: 3rem; }
 
     /* Landing Page Arrow Text - Desktop: "tippen" anzeigen, "klicken" verstecken */
