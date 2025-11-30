@@ -1,61 +1,74 @@
-// Grid Position Management
-let currentCard = 2;        // Start bei Landing Page (Card 2)
-let card5VisitCount = 0;    // Zähler für Card 5 Besuche
+/* -----------------------------------------------------------
+    JavaScript für persönliche Portfolio-Seite
+    Autor: Zoltan Ress
+    Datum: 2025-11-30
+----------------------------------------------------------- */
 
-// Card Positionen im Grid (row, col)
-const cardPositions = {
-    1: { row: 2, col: 0 },
-    2: { row: 2, col: 1 },  // Landing page
-    3: { row: 2, col: 2 },
-    4: { row: 1, col: 0 },  // Der ITler
-    5: { row: 1, col: 1 },  // Choose Your Character
-    6: { row: 1, col: 2 },  // Der Jurist
-    7: { row: 0, col: 0 },  // Technologien
-    8: { row: 0, col: 1 },  // Dankeschön
-    9: { row: 0, col: 2 }   // Zertifikate
-};
+let chooseVisitCount = 0;
+let isAnimating = false;
 
-function navigateTo(cardNumber) {
-    currentCard = cardNumber;
-    
-    // Zurücksetzen des Zählers wenn zur Landing Page zurückgekehrt wird
-    if (cardNumber === 2) {
-        card5VisitCount = 0;
-        const homeButton = document.getElementById('homeButton');
-        homeButton.classList.remove('visible');
+function navigateCard(fromCard, toCard, direction) {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const fromElement = document.querySelector(`[data-card="${fromCard}"]`);
+    const toElement = document.querySelector(`[data-card="${toCard}"]`);
+
+    // Reset counter when returning to the landing page
+    if (toCard === 'landing') {
+        chooseVisitCount = 0;
+        document.getElementById('homeButton').classList.remove('visible');
     }
-    
-    // Zähle Besuche auf Card 5
-    if (cardNumber === 5) {
-        card5VisitCount++;
-        updateHomeButtonVisibility();
+
+    // Count visits to choose card
+    if (toCard === 'choose') {
+        chooseVisitCount++;
+        if (chooseVisitCount >= 2) {
+            document.getElementById('homeButton').classList.add('visible');
+        }
     }
-    
-    updateGridPosition();
+
+    // SCHRITT 1: Setze toCard in Schicht 2 (next-card, z-index 50)
+    toElement.classList.add('next-card');
+
+    // SCHRITT 2: Bestimme die Verschiebungsrichtung für fromCard
+    let transform = '';
+    switch(direction) {
+        case 'down':
+            transform = 'translateY(100vh)';
+            break;
+        case 'up':
+            transform = 'translateY(-100vh)';
+            break;
+        case 'left':
+            transform = 'translateX(-100vw)';
+            break;
+        case 'right':
+            transform = 'translateX(100vw)';
+            break;
+    }
+
+    // SCHRITT 3: Führe die Animation aus (fromCard wird weggeschoben)
+    // Kurzes Delay damit der Browser die z-index Änderung registriert
+    setTimeout(() => {
+        fromElement.style.transform = transform;
+    }, 10);
+
+    // SCHRITT 4: Nach Animation - Cleanup und Schichtwechsel
+    setTimeout(() => {
+        // fromCard geht zurück ins Lager (Schicht 1, z-index 1)
+        fromElement.classList.remove('current-card');
+        fromElement.style.transform = '';
+        
+        // toCard wird zur aktuellen Card (Schicht 3, z-index 100)
+        toElement.classList.remove('next-card');
+        toElement.classList.add('current-card');
+        
+        isAnimating = false;
+    }, 650);
 }
 
-function updateHomeButtonVisibility() {
-    const homeButton = document.getElementById('homeButton');
-    if (card5VisitCount >= 2) {
-        homeButton.classList.add('visible');
-    }
-}
-
-function updateGridPosition() {
-    const position = cardPositions[currentCard];
-    const gridContainer = document.getElementById('gridContainer');
-    
-    // Berechne die Translation basierend auf der Card-Position
-    const translateX = -position.col * 100;
-    const translateY = -position.row * 100;
-    
-    gridContainer.style.transform = `translate(${translateX}vw, ${translateY}vh)`;
-}
-
-// Initial Position setzen (Card 2 - Landing Page)
-updateGridPosition();
-
-// Touch/Swipe Support für mobile Geräte
+// Touch/Swipe Support
 let touchStartX = 0;
 let touchStartY = 0;
 let touchEndX = 0;
@@ -79,88 +92,74 @@ function handleSwipe() {
     const deltaY = touchEndY - touchStartY;
     const minSwipeDistance = 50;
 
-    // Horizontal swipe hat Priorität wenn größer
+    // Bestimme welche Card gerade sichtbar ist
+    const visibleCard = getVisibleCard();
+
     if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
         if (deltaX > 0) {
-            // Swipe right - zeige linke Card
-            handleSwipeRight();
+            // Swipe right
+            handleSwipeGesture(visibleCard, 'right');
         } else {
-            // Swipe left - zeige rechte Card
-            handleSwipeLeft();
+            // Swipe left
+            handleSwipeGesture(visibleCard, 'left');
         }
     } else if (Math.abs(deltaY) > minSwipeDistance) {
         if (deltaY > 0) {
-            // Swipe down - zeige obere Card
-            handleSwipeDown();
+            // Swipe down
+            handleSwipeGesture(visibleCard, 'down');
         } else {
-            // Swipe up - zeige untere Card
-            handleSwipeUp();
+            // Swipe up
+            handleSwipeGesture(visibleCard, 'up');
         }
     }
 }
 
-function handleSwipeLeft() {
-    const pos = cardPositions[currentCard];
-    // Suche Card rechts davon
-    for (let card in cardPositions) {
-        if (cardPositions[card].row === pos.row && 
-            cardPositions[card].col === pos.col + 1) {
-            navigateTo(parseInt(card));
-            break;
+function getVisibleCard() {
+    const cards = document.querySelectorAll('.card');
+    let highestZIndex = -1;
+    let visibleCard = null;
+
+    cards.forEach(card => {
+        if (card.classList.contains('hidden')) return;
+        const zIndex = parseInt(window.getComputedStyle(card).zIndex);
+        if (zIndex > highestZIndex) {
+            highestZIndex = zIndex;
+            visibleCard = card.getAttribute('data-card');
         }
-    }
+    });
+
+    return visibleCard;
 }
 
-function handleSwipeRight() {
-    const pos = cardPositions[currentCard];
-    // Suche Card links davon
-    for (let card in cardPositions) {
-        if (cardPositions[card].row === pos.row && 
-            cardPositions[card].col === pos.col - 1) {
-            navigateTo(parseInt(card));
-            break;
+function handleSwipeGesture(currentCard, direction) {
+    // Definiere Swipe-Navigation basierend auf aktueller Card
+    const swipeMap = {
+        'landing': {
+            'up': ['landing', 'choose', 'down']
+        },
+        'choose': {
+            'down': ['choose', 'landing', 'up'],
+            'right': ['choose', 'itler', 'left'],
+            'left': ['choose', 'jurist', 'right']
+        },
+        'itler': {
+            'right': ['itler', 'choose', 'left'],
+            'up': ['itler', 'tech', 'down']
+        },
+        'jurist': {
+            'left': ['jurist', 'choose', 'right'],
+            'up': ['jurist', 'zertifikate', 'down']
+        },
+        'tech': {
+            'down': ['tech', 'itler', 'up']
+        },
+        'zertifikate': {
+            'down': ['zertifikate', 'jurist', 'up']
         }
+    };
+
+    if (swipeMap[currentCard] && swipeMap[currentCard][direction]) {
+        const [from, to, dir] = swipeMap[currentCard][direction];
+        navigateCard(from, to, dir);
     }
 }
-
-function handleSwipeUp() {
-    const pos = cardPositions[currentCard];
-    // Suche Card darunter
-    for (let card in cardPositions) {
-        if (cardPositions[card].col === pos.col && 
-            cardPositions[card].row === pos.row + 1) {
-            navigateTo(parseInt(card));
-            break;
-        }
-    }
-}
-
-function handleSwipeDown() {
-    const pos = cardPositions[currentCard];
-    // Suche Card darüber
-    for (let card in cardPositions) {
-        if (cardPositions[card].col === pos.col && 
-            cardPositions[card].row === pos.row - 1) {
-            navigateTo(parseInt(card));
-            break;
-        }
-    }
-}
-
-// Keyboard Navigation
-document.addEventListener('keydown', function(e) {
-    switch(e.key) {
-        case 'ArrowLeft':
-            handleSwipeRight();
-            break;
-        case 'ArrowRight':
-            handleSwipeLeft();
-            break;
-        case 'ArrowUp':
-            handleSwipeDown();
-            break;
-        case 'ArrowDown':
-            handleSwipeUp();
-            break;
-    }
-});
