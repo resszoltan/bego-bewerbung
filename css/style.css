@@ -75,18 +75,18 @@ img {
 .hello {font-family: "Russo One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 5rem;
-    margin: 0;
+    font-size: 4rem;
+    letter-spacing: 2px;
 }
 .bego {font-family: "Russo One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 6rem;
-    margin-bottom: 5rem;
+    font-size: 5rem;
+    margin-bottom: 4rem;
 }
 .card[data-card="landing"] p {
     font-family: sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 2rem;
     max-width: 400px;
     margin-bottom: 2rem;
@@ -97,7 +97,7 @@ img {
 }
 .name {
     font-family: "Russo One", sans-serif;
-    font-size: 2rem;
+    font-size: 1.7rem;
     text-shadow: 0px 2px 3px rgb(127, 127, 127);
 }
 .name-zr {
@@ -106,8 +106,8 @@ img {
 .deko1 {
     background-color: white;
     height: 1px;
-    width: 37%;
-    margin-bottom: 2rem;
+    width: 33%;
+    margin-bottom: 1.8rem;
 }
 .das-ist {
     letter-spacing: 3px;
@@ -124,17 +124,24 @@ img {
 /* Choose Your Character ------------------------------------ */
 .card[data-card="choose"] {
     background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    /*background-color: rgb(230, 170, 20);*/
 }
 .card[data-card="choose"] h2 {
     font-size: 3rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     text-shadow: 0px 3px 3px rgb(127, 127, 127);
 }
 .card[data-card="choose"] .content {
-    max-width: 400px;
+    max-width: 300px;
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
+}
+.deko2 {
+    background-color: white;
+    height: 525px;
+    width: 50%;
+    margin: 0;
 }
 
 
@@ -142,6 +149,7 @@ img {
 /* Der ITler ------------------------------------------------ */
 .card[data-card="itler"] {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /*background-color: rgb(230, 170, 20);*/
 }
 .card[data-card="itler"] h2 {
     font-size: 2.5rem;
@@ -160,6 +168,7 @@ img {
 /* Der Jurist ----------------------------------------------- */
 .card[data-card="jurist"] {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    /*background-color: rgb(230, 170, 20);*/
 }
 .card[data-card="jurist"] h2 {
     font-size: 2.5rem;
@@ -178,6 +187,7 @@ img {
 /* Angewandte Technologien ---------------------------------- */
 .card[data-card="tech"] {
     background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    /*background-color: rgb(230, 170, 20);*/
 }
 .card[data-card="tech"] h2 {
     font-size: 2.5rem;
@@ -197,7 +207,8 @@ img {
 /* Zertifikate ---------------------------------------------- */
 .card[data-card="zertifikate"] {
     background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    color: #333;
+    /*background-color: rgb(230, 170, 20);*/
+    *color: #333;*
 }
 .card[data-card="zertifikate"] h2 {
     font-size: 2.5rem;
@@ -218,6 +229,7 @@ img {
 /* Danke schön ---------------------------------------------- */
 .card[data-card="ende"] {
     background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    /*background-color: rgb(230, 170, 20);*/
 }
 .card[data-card="ende"] h2 {
     font-size: 2.5rem;
@@ -258,7 +270,6 @@ img {
     align-items: center;
     justify-content: center;
     gap: 3px;
-    margin-top: 5rem;
 }
 .left-text, .right-text {
     font-family: sans-serif;
@@ -324,28 +335,6 @@ img {
 
 /* Media Query ---------------------------------------------- */
 @media (min-width: 1920px) {
-    /*.card[data-card="landing"] h1 {
-        font-size: 10rem;
-    }*/
-
-    /*.card p,    Wahrscheinlich wird nicht gebraucht
-    .card .content {    He???...
-        font-size: 1.3rem;
-    }*/
-
-    /*.card h2 {  /* Haben wir auch nicht...
-        font-size: 3rem;
-    }*/
-
-    /*.bounce-arrow {  Muss ich noch nachgucken...
-        font-size: 3.5rem;
-    }*/
-
-    /* Landing Page Main Text */
-    /*h1 { font-size: 6rem; } Möglicherweise wird anders bezeichnet wie .card[data-card="landing"] h1 usw. ... Nee, wird nicht gebraucht. */
-
-    /*p { font-size: 1.5rem; max-width: 600px; } Möglicherweise wird anders bezeichnet wie .card[data-card="landing"] p usw. ... Nee, wird nicht gebraucht. */
-
     .hello { font-size: 7em; letter-spacing: 5px; color: red}
     .bego { font-size: 9rem;}
     .card[data-card="landing"] p { font-size: 2.4rem; max-width: 600px;}
