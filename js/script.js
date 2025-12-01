@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------
     JavaScript für persönliche Portfolio-Seite
     Autor: Zoltan Ress
-    Datum: 2025-11-30
+    Datum: 2025-12-01
 ----------------------------------------------------------- */
 
 let chooseVisitCount = 0;
@@ -58,7 +58,13 @@ function navigateCard(fromCard, toCard, direction) {
     setTimeout(() => {
         // fromCard geht zurück ins Lager (Schicht 1, z-index 1)
         fromElement.classList.remove('current-card');
+        fromElement.style.transition = 'none';  // Animation ausschalten
         fromElement.style.transform = '';
+
+        // Nach kurzem Delay Transition wieder aktivieren
+        setTimeout(() => {
+            fromElement.style.transition = '';
+        }, 50);
         
         // toCard wird zur aktuellen Card (Schicht 3, z-index 100)
         toElement.classList.remove('next-card');
@@ -166,10 +172,3 @@ function handleSwipeGesture(currentCard, direction) {
     }
 
 }
-
-
-
-
-
-
-
