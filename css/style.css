@@ -277,11 +277,18 @@ img {
     /*color: white;*/
     margin-top: 5rem;
 }
-/* Landing Page Arrow Text - Mobile: "tippen" anzeigen, "klicken" verstecken */
-.mobile {
+/* Landing Page Arrow Left Text - Mobile: "nach oben" anzeigen, "hier" verstecken */
+.left-mobile {
     display: inline;
 }
-.desktop {
+.left-desktop {
+    display: none;
+}
+/* Landing Page Arrow Right Text - Mobile: "wischen" anzeigen, "klicken" verstecken */
+.right-mobile {
+    display: inline;
+}
+.right-desktop {
     display: none;
 }
 /* Arrow Button und seine Teile */
@@ -347,11 +354,16 @@ img {
     .name-proj { letter-spacing: 21px;}
     .arrow { font-size: 3rem; }
 
-    /* Landing Page Arrow Text - Desktop: "tippen" anzeigen, "klicken" verstecken */
-    .mobile { display: none; }
-    .desktop { display: inline; }
+    /* Landing Page Arrow Left Text - Desktop: "hier" anzeigen, "nach oben" verstecken */
+    .left-mobile { display: none; }
+    .left-desktop { display: inline; }
+    
+    /* Landing Page Arrow Right Text - Desktop: "wischen" anzeigen, "klicken" verstecken */
+    .right-mobile { display: none; }
+    .right-desktop { display: inline; }
 
 }
+
 
 
 
