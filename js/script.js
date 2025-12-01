@@ -143,18 +143,20 @@ function handleSwipeGesture(currentCard, direction) {
             'right': ['choose', 'jurist', 'right']
         },
         'itler': {
-            'right': ['itler', 'choose', 'left'],
-            'up': ['itler', 'tech', 'down']
+            'left': ['itler', 'choose', 'left'],
+            'down': ['itler', 'tech', 'down']
         },
         'jurist': {
-            'left': ['jurist', 'choose', 'right'],
-            'up': ['jurist', 'zertifikate', 'down']
+            'right': ['jurist', 'choose', 'right'],
+            'down': ['jurist', 'zertifikate', 'down']
         },
         'tech': {
-            'down': ['tech', 'itler', 'up']
+            'up': ['tech', 'itler', 'up'],
+            'left': ['tech', 'ende', 'left']
         },
         'zertifikate': {
-            'down': ['zertifikate', 'jurist', 'up']
+            'up': ['zertifikate', 'jurist', 'up'],
+            'right': ['zertifikate', 'ende', 'right']
         }
     };
 
@@ -164,4 +166,5 @@ function handleSwipeGesture(currentCard, direction) {
     }
 
 }
+
 
