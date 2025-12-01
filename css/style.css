@@ -139,8 +139,8 @@ img {
 }
 .deko2 {
     background-color: white;
-    height: 400px;
-    width: 50%;
+    height: 300px;
+    width: 3px;
     margin: 0;
 }
 
@@ -363,6 +363,7 @@ img {
     .right-desktop { display: inline; }
 
 }
+
 
 
 
