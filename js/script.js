@@ -168,3 +168,4 @@ function handleSwipeGesture(currentCard, direction) {
 }
 
 
+
