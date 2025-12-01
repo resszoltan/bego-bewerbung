@@ -27,7 +27,7 @@ body {
 }
 
 img {
-    width: 200px;
+    width: 190px;
     max-width: 100%;
     height: auto;
 }
@@ -38,9 +38,9 @@ img {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 90vh;
+    height: 95vh;
     padding: 40px 20px;
-    border: 15px solid rgb(127, 127, 127);
+    border: 10px solid rgb(127, 127, 127);
     border-radius: 50px;
     display: flex;
     flex-direction: column;
@@ -125,8 +125,8 @@ img {
 
 /* Choose Your Character ------------------------------------ */
 .card[data-card="choose"] {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    /*background-color: rgb(230, 170, 20);*/
+    /*background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);*/
+    background-color: rgb(230, 170, 20);
 }
 .card[data-card="choose"] h2 {
     font-size: 2rem;
@@ -150,8 +150,8 @@ img {
 
 /* Der ITler ------------------------------------------------ */
 .card[data-card="itler"] {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    /*background-color: rgb(230, 170, 20);*/
+    /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
+    background-color: rgb(230, 170, 20);
 }
 .card[data-card="itler"] h2 {
     font-size: 2rem;
@@ -169,8 +169,8 @@ img {
 
 /* Der Jurist ----------------------------------------------- */
 .card[data-card="jurist"] {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    /*background-color: rgb(230, 170, 20);*/
+    /*background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);*/
+    background-color: rgb(230, 170, 20);
 }
 .card[data-card="jurist"] h2 {
     font-size: 2rem;
@@ -188,8 +188,8 @@ img {
 
 /* Angewandte Technologien ---------------------------------- */
 .card[data-card="tech"] {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-    /*background-color: rgb(230, 170, 20);*/
+    /*background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);*/
+    background-color: rgb(230, 170, 20);
 }
 .card[data-card="tech"] h2 {
     font-size: 2rem;
@@ -208,8 +208,8 @@ img {
 
 /* Zertifikate ---------------------------------------------- */
 .card[data-card="zertifikate"] {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    /*background-color: rgb(230, 170, 20);*/
+    /*background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);*/
+    background-color: rgb(230, 170, 20);
     color: #333;
 }
 .card[data-card="zertifikate"] h2 {
@@ -230,8 +230,8 @@ img {
 
 /* Danke schön ---------------------------------------------- */
 .card[data-card="ende"] {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-    /*background-color: rgb(230, 170, 20);*/
+    /*background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);*/
+    background-color: rgb(230, 170, 20);
 }
 .card[data-card="ende"] h2 {
     font-size: 2.5rem;
@@ -269,8 +269,8 @@ img {
 /* Text um den Button herum */
 .action-row {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 3px;
 }
 .left-text, .right-text {
@@ -365,6 +365,7 @@ img {
     .right-desktop { display: inline; }
 
 }
+
 
 
 
