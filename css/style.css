@@ -369,6 +369,34 @@ img.choose {
     50% { transform: translateX(12px); }
 }
 
+/* Text-Button-Text Section */
+.container {
+    display: flex;
+    flex-wrap: wrap;            /* falls auf sehr schmalen Screens doch umbrechen soll */
+    gap: 0x;                    /* Abstand zwischen den Divs */
+    justify-content: center;    /* zentriert, falls der Platz nicht reicht */
+    padding: 20px;
+}
+.box {
+    flex: 0 0 auto;             /* verhindert, dass Flex sie vergrößert/verkleinert */
+}
+.box1 {
+    width: 100px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: -22px }   /* diese Box ist für Texte auf der linken Seite des Buttons */
+.box2 {
+    width: 70px;
+    display: flex;
+    justify-content: center; }     /* diese Box ist für den Button */
+.box3 {
+    width: 100px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    top: -22px } /* diese Box ist für Texte auf der rechten Seite des Buttons */
+
 
 /* Media Query ---------------------------------------------- */
 @media (min-width: 1920px) {
@@ -395,4 +423,10 @@ img.choose {
     /* Choose card Arrow Lower Text - Desktop: "verschieben" anzeigen, "wischen" verstecken */
     .lower-mobile { display: none; }
     .lower-desktop { display: inline; }
+
+    .container { flex-wrap: nowrap; }   /* erzwingt eine Zeile */
+}
+
+@media (max-width: 420px) {
+    .container { flex-wrap: nowrap; }   /* erzwingt eine Zeile */
 }
