@@ -38,7 +38,7 @@ img {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 92vh;
+    height: 93vh;
     padding: 40px 20px;
     border: 10px solid rgb(127, 127, 127);
     border-radius: 50px;
@@ -365,6 +365,7 @@ img {
     .right-desktop { display: inline; }
 
 }
+
 
 
 
