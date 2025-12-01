@@ -40,7 +40,8 @@
                 <!-- Navigation 1.1 -->
                 <div class="action-row">
                     <!-- Text 1 -->
-                    <span class="left-text">hier</span>
+                    <span class="left-text mobile">nach oben</span>
+                    <span class="left-text desktop">hier</span>
 
                     <!-- Down button -->
                     <button class="arrow-button" onclick="navigateCard('landing', 'choose', 'down')">
@@ -49,13 +50,13 @@
                             <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
                             <path d="M12 6v12m0 0l-4-4m4 4l4-4"
                             stroke="rgb(127,127,127)" stroke-width="3" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            stroke-linecap="round" stroke-linejoin="round" transform="rotate(180)" transform-origin="center" />
                         </svg>
                     </div>
                     </button>
 
                     <!-- Text 2, mit alternatives Einblenden -->
-                    <span class="right-text mobile">tippen</span>
+                    <span class="right-text mobile">wischen</span>
                     <span class="right-text desktop">klicken</span>
                 </div>
             </div>
@@ -94,7 +95,7 @@
                         <div class="arrow-circl arrow-bounce-left">
                             <svg class="arrow arrow-bounce-left" width="50" height="50" viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
-                                <path d="M18 12H6m0 0l4-4m-4 4l4 4"
+                                <path d="M6 12h12m0 0l-4-4m4 4l-4 4"
                                 stroke="rgb(127,127,127)" stroke-width="3" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
@@ -106,7 +107,7 @@
                         <div class="arrow-circle arrow-bounce-right">
                             <svg class="arrow arrow-bounce-right" width="50" height="50" viewBox="0 0 24 24">
                                 <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
-                                <path d="M6 12h12m0 0l-4-4m4 4l-4 4"
+                                <path d="M18 12H6m0 0l4-4m-4 4l4 4M6 12h12m0 0l-4-4m4 4l-4 4"
                                 stroke="rgb(127,127,127)" stroke-width="3" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
@@ -131,7 +132,7 @@
                             <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
                             <path d="M12 6v12m0 0l-4-4m4 4l4-4"
                             stroke="rgb(127,127,127)" stroke-width="3" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            stroke-linecap="round" stroke-linejoin="round" transform="rotate(180)" transform-origin="center" />
                         </svg>
                     </div>
                 </button>
@@ -153,7 +154,7 @@
                             <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
                             <path d="M12 6v12m0 0l-4-4m4 4l4-4"
                             stroke="rgb(127,127,127)" stroke-width="3" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" />
+                            stroke-linecap="round" stroke-linejoin="round" transform="rotate(180)" transform-origin="center" />
                         </svg>
                     </div>
                 </button>
@@ -263,4 +264,5 @@
         <script src="js/script.js"></script>
 
     </body>
+
 </html>
