@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------
     CSS für persönliche Portfolio-Seite
     Autor: Zoltan Ress
-    Datum: 2025-11-30
+    Datum: 2025-12-01
 ----------------------------------------------------------- */
 
 * {
@@ -27,9 +27,14 @@ body {
 }
 
 img {
+    max-width: 100%;
+    height: auto;
+}
+img.choose {
     width: 190px;
     max-width: 100%;
     height: auto;
+    border: 1px solid white;
 }
 
 
@@ -120,6 +125,11 @@ img {
 .name-proj {
     letter-spacing: 15px;
 }
+.left-text, .right-text {
+    font-family: sans-serif;
+    font-size: 1rem;
+    margin-top: 5rem;
+}
 
 
 
@@ -134,17 +144,39 @@ img {
     text-shadow: 0px 3px 3px rgb(127, 127, 127);
 }
 .card[data-card="choose"] .content {
-    max-width: 300px;
+    max-width: 400px;
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
 }
+.char-title {
+    font-family: "Russo One", sans-serif;
+    font-style: normal;
+    font-size: 1.5rem;
+    position: relative;
+    top: 40px;
+    display: flex;
+    justify-content: space-around;
+}
 .deko2 {
+    position: relative;
+    top: -15px;
     background-color: white;
-    height: 300px;
-    width: 3px;
+    height: 400px;
+    width: 4px;
     margin: 0;
 }
+.upper-text, .lower-text {
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+.upper-text-shift {
+    position: relative;
+    top: 2rem;
+}
+/* Choose One Arrow Lower Text - Mobile: "wischen" anzeigen, "verschieben" verstecken */
+.lower-mobile { display: inline; }
+.lower-desktop { display: none; }
 
 
 
@@ -163,6 +195,7 @@ img {
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
+    text-align: justify;
 }
 
 
@@ -182,6 +215,7 @@ img {
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
+    text-align: justify;
 }
 
 
@@ -201,7 +235,7 @@ img {
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
-    margin-bottom: 2rem;
+    text-align: justify;
 }
 
 
@@ -210,12 +244,12 @@ img {
 .card[data-card="zertifikate"] {
     /*background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);*/
     background-color: rgb(230, 170, 20);
-    color: #333;
+    /*color: #333;*/
 }
 .card[data-card="zertifikate"] h2 {
     font-size: 2rem;
     margin-bottom: 4rem;
-    color: #333;
+    /*color: #333;*/
     text-shadow: 0px 3px 3px rgb(127, 127, 127);
 }
 .card[data-card="zertifikate"] .content {
@@ -223,7 +257,7 @@ img {
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
-    margin-bottom: 2rem;
+    text-align: justify;
 }
 
 
@@ -273,12 +307,6 @@ img {
     align-items: center;
     gap: 3px;
 }
-.left-text, .right-text {
-    font-family: sans-serif;
-    font-size: 1rem;
-    /*color: white;*/
-    margin-top: 5rem;
-}
 /* Landing Page Arrow Left Text - Mobile: "nach oben" anzeigen, "hier" verstecken */
 .left-mobile {
     display: inline;
@@ -306,11 +334,11 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .arrow {
     font-size: 2.5rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 .arrow-left {
     transform: rotate(-90deg);
@@ -344,45 +372,27 @@ img {
 
 /* Media Query ---------------------------------------------- */
 @media (min-width: 1920px) {
-    .hello { font-size: 7em; letter-spacing: 5px; color: red}
-    .bego { font-size: 9rem;}
-    .card[data-card="landing"] p { font-size: 2.4rem; max-width: 600px;}
-    .card[data-card="choose"] p { font-size: 2.4rem; max-width: 2000px;}
+    .card { height: 100vh; }
+
+    .hello { font-size: 7em; letter-spacing: 5px; }
+    .bego { font-size: 9rem; }
+    .card[data-card="landing"] p { font-size: 2.4rem; max-width: 600px; }
+    .card[data-card="choose"] p { font-size: 2.4rem; max-width: 2000px; }
     .mein-name {letter-spacing: 6px;}
     .name { font-size: 3.5rem; line-height: 5rem; }
-    .deko1 { width: 16%; height: 3px;}
+    .deko1 { width: 16%; height: 3px; }
     .das-ist { letter-spacing: 1px; }
-    .unterst { letter-spacing: 8px; line-height: 5rem;}
-    .name-proj { letter-spacing: 21px;}
+    .unterst { letter-spacing: 8px; line-height: 5rem; }
+    .name-proj { letter-spacing: 21px; }
     .arrow { font-size: 3rem; }
 
     /* Landing Page Arrow Left Text - Desktop: "hier" anzeigen, "nach oben" verstecken */
     .left-mobile { display: none; }
     .left-desktop { display: inline; }
-    
     /* Landing Page Arrow Right Text - Desktop: "wischen" anzeigen, "klicken" verstecken */
     .right-mobile { display: none; }
     .right-desktop { display: inline; }
-
+    /* Choose card Arrow Lower Text - Desktop: "verschieben" anzeigen, "wischen" verstecken */
+    .lower-mobile { display: none; }
+    .lower-desktop { display: inline; }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
