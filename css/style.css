@@ -77,7 +77,6 @@ img {
     font-style: normal;
     font-size: 4rem;
     letter-spacing: 2px;
-    color: red;
 }
 .bego {font-family: "Russo One", sans-serif;
     font-weight: 400;
@@ -94,7 +93,7 @@ img {
     text-align: center;
 }
 .mein-name {
-    letter-spacing: 6px;
+    letter-spacing: 5px;
 }
 .name {
     font-family: "Russo One", sans-serif;
@@ -107,17 +106,17 @@ img {
 .deko1 {
     background-color: white;
     height: 3px;
-    width: 100%;
+    width: 25%;
     margin-bottom: 1.5rem;
 }
 .das-ist {
     letter-spacing: 3px;
 }
 .unterst {
-    letter-spacing: 8px;
+    letter-spacing: 7px;
 }
 .name-proj {
-    letter-spacing: 16px;
+    letter-spacing: 15px;
 }
 
 
@@ -353,5 +352,6 @@ img {
     .desktop { display: inline; }
 
 }
+
 
 
