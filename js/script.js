@@ -135,7 +135,7 @@ function handleSwipeGesture(currentCard, direction) {
     // Definiere Swipe-Navigation basierend auf aktueller Card
     const swipeMap = {
         'landing': {
-            'up': ['landing', 'choose', 'down']
+            'down': ['landing', 'choose', 'down']
         },
         'choose': {
             'down': ['choose', 'landing', 'up'],
@@ -162,4 +162,5 @@ function handleSwipeGesture(currentCard, direction) {
         const [from, to, dir] = swipeMap[currentCard][direction];
         navigateCard(from, to, dir);
     }
+
 }
