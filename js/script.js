@@ -152,11 +152,11 @@ function handleSwipeGesture(currentCard, direction) {
         },
         'tech': {
             'up': ['tech', 'itler', 'up'],
-            'left': ['tech', 'ende', 'left']
+            'right': ['tech', 'ende', 'right']
         },
         'zertifikate': {
             'up': ['zertifikate', 'jurist', 'up'],
-            'right': ['zertifikate', 'ende', 'right']
+            'left': ['zertifikate', 'ende', 'left']
         }
     };
 
@@ -166,6 +166,7 @@ function handleSwipeGesture(currentCard, direction) {
     }
 
 }
+
 
 
 
