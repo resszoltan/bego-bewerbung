@@ -31,7 +31,7 @@ img {
     height: auto;
 }
 img.choose {
-    width: 190px;
+    width: 170px;
     max-width: 100%;
     height: auto;
     border: 1px solid white;
@@ -160,9 +160,9 @@ img.choose {
 }
 .deko2 {
     position: relative;
-    top: -15px;
+    top: 0px;
     background-color: white;
-    height: 400px;
+    height: 270px;
     width: 4px;
     margin: 0;
 }
