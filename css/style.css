@@ -39,7 +39,7 @@ img {
     left: 0;
     width: 100vw;
     height: 93vh;
-    padding: 40px 20px;
+    padding: 20px 10px;
     border: 10px solid rgb(127, 127, 127);
     border-radius: 50px;
     display: flex;
@@ -365,6 +365,7 @@ img {
     .right-desktop { display: inline; }
 
 }
+
 
 
 
