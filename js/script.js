@@ -144,11 +144,11 @@ function handleSwipeGesture(currentCard, direction) {
         },
         'itler': {
             'left': ['itler', 'choose', 'left'],
-            'down': ['itler', 'tech', 'down']
+            'up': ['itler', 'tech', 'up']
         },
         'jurist': {
             'right': ['jurist', 'choose', 'right'],
-            'down': ['jurist', 'zertifikate', 'down']
+            'up': ['jurist', 'zertifikate', 'up']
         },
         'tech': {
             'up': ['tech', 'itler', 'up'],
@@ -166,6 +166,7 @@ function handleSwipeGesture(currentCard, direction) {
     }
 
 }
+
 
 
 
