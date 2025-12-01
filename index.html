@@ -38,27 +38,30 @@
                     <span class="name name-proj">PROJEKT</span>
                 </p>
 
-                <!-- Navigation 1.1 -->
-                <div class="action-row">
-                    <!-- Text 1 -->
-                    <span class="left-text left-mobile">nach oben</span>
-                    <span class="left-text left-desktop">hier</span>
-
-                    <!-- Down button -->
-                    <button class="arrow-button" onclick="navigateCard('landing', 'choose', 'up')">
-                    <div class="arrow-circle arrow-bounce-down">
-                        <svg class="arrow arrow-bounce-down" width="50" height="50" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
-                            <path d="M12 6v12m0 0l-4-4m4 4l4-4"
-                            stroke="rgb(127,127,127)" stroke-width="3" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" transform="rotate(180)" transform-origin="center" />
-                        </svg>
+                <div class="container">
+                    <!-- Text 1, mit alternativem Einblenden -->
+                    <div class="box box1">
+                        <span class="left-text left-mobile">nach oben</span>
+                        <span class="left-text left-desktop">hier</span>
                     </div>
-                    </button>
-
-                    <!-- Text 2, mit alternatives Einblenden -->
-                    <span class="right-text right-mobile">wischen</span>
-                    <span class="right-text right-desktop">klicken</span>
+                    <!-- Navigation 1.1 -->
+                    <div class="box box2">
+                        <button class="arrow-button" onclick="navigateCard('landing', 'choose', 'up')">
+                            <div class="arrow-circle arrow-bounce-down">
+                                <svg class="arrow arrow-bounce-down" width="50" height="50" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                                    <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                                    stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" transform="rotate(180)" transform-origin="center" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Text 2, mit alternativem Einblenden -->
+                    <div class="box box3">
+                        <span class="right-text right-mobile">wischen</span>
+                        <span class="right-text right-desktop">klicken</span>
+                    </div>
                 </div>
             </div>
 
@@ -98,7 +101,7 @@
                     <span class="upper-text">nach links</span>
                 </div>
                 <div style="display: flex; justify-content: space-between; width: 66%;">
-                    <!-- Navigation 2.2 (To the right button) -->
+                    <!-- Navigation 2.2 (Button nach rechts) -->
                     <button class="arrow-button" onclick="navigateCard('choose', 'jurist', 'right')">
                         <div class="arrow-circle arrow-bounce-left">
                             <svg class="arrow arrow-bounce-left" width="50" height="50" viewBox="0 0 24 24">
@@ -110,7 +113,7 @@
                         </div>
                     </button>
 
-                    <!-- Navigation 2.3 (To the left button) -->
+                    <!-- Navigation 2.3 (Button nach links) -->
                     <button class="arrow-button" onclick="navigateCard('choose', 'itler', 'left')">
                         <div class="arrow-circle arrow-bounce-right">
                             <svg class="arrow arrow-bounce-right" width="50" height="50" viewBox="0 0 24 24">
@@ -275,50 +278,57 @@
                     <p>Vielen Dank für Ihre Zeit und Ihr Interesse. Ich freue mich auf ein persönliches Gespräch!</p>
                 </div>
 
-
-                <div class="action-row">
+                <div class="container">
                     <!-- Text 1 -->
-                    <span class="left-text">nochmals</span>
-
+                    <div class="box box1">
+                        <span class="left-text">nochmals</span>
+                    </div>
                     <!-- Navigation 7.1 (repeat button) -->
-                    <button class="arrow-button" onclick="navigateCard('ende', 'choose', 'up')">
-                        <div class="arrow-circle" style="position: relative; top: 20px;">
-                            <svg class="arrow" width="50" height="50" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
-                                <path d="M 17 1 L 21 5 L 17 9 M 21 5 L 7 5 C 4 5 2 7 2 10 L 2 14 M 7 23 L 3 19 L 7 15 M 3 19 L 17 19 C 20 19 22 17 22 14 L 22 10"
-                                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round"  transform="scale(0.6)" transform-origin="center" />
-                            </svg>
-                        </div>
-                    </button>
-
+                    <div class="box box2">
+                        <button class="arrow-button" onclick="navigateCard('ende', 'choose', 'up')">
+                            <div class="arrow-circle">
+                                <svg class="arrow" width="50" height="50" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                                    <path d="M 17 1 L 21 5 L 17 9 M 21 5 L 7 5 C 4 5 2 7 2 10 L 2 14 M 7 23 L 3 19 L 7 15 M 3 19 L 17 19 C 20 19 22 17 22 14 L 22 10"
+                                    stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round"  transform="scale(0.6)" transform-origin="center" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
                     <!-- Text 2 -->
-                    <span class="right-text">angucken</span>
+                    <div class="box box3">
+                        <span class="right-text">angucken</span>
+                    </div>
                 </div>
 
                 <div class="content">
-                    <p style="margin: 4rem 0 2rem 0">oder</p>
+                    <p style="margin: 4rem 0 1rem 0">oder</p>
                 </div>
 
-                <div class="action-row">
+                <div class="container">
                     <!-- Text 1 -->
-                    <span class="left-text">geh nach</span>
-
+                    <div class="box box1">
+                        <span class="left-text">geh nach</span>
+                    </div>
                     <!-- Navigation 7.2 (home button) -->
-                    <button class="arrow-button" onclick="navigateCard('ende', 'landing', 'up')">
-                        <div class="arrow-circle" style="position: relative; top: 20px;">
-                            <svg class="arrow" width="50" height="50" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
-                                <path d="M 12 2.0996094 L 1 12 L 4 12 L 4 21 L 10 21 L 10 14 L 14 14 L 14 21 L 20 21 L 20 12 L 23 12 L 12 2.0996094 z"
-                                stroke="rgb(127,127,127)" stroke-width="3" fill="rgb(127,127,127)"
-                                stroke-linecap="square" stroke-linejoin="square" transform="scale(0.6)" transform-origin="center" />
-                            </svg>
-                        </div>
-                    </button>
-
+                    <div class="box box2">
+                        <button class="arrow-button" onclick="navigateCard('ende', 'landing', 'up')">
+                            <div class="arrow-circle">
+                                <svg class="arrow" width="50" height="50" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                                    <path d="M 12 2.0996094 L 1 12 L 4 12 L 4 21 L 10 21 L 10 14 L 14 14 L 14 21 L 20 21 L 20 12 L 23 12 L 12 2.0996094 z"
+                                    stroke="rgb(127,127,127)" stroke-width="3" fill="rgb(127,127,127)"
+                                    stroke-linecap="square" stroke-linejoin="square" transform="scale(0.6)" transform-origin="center" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
                     <!-- Text 2 -->
-                    <span class="right-text">ganz Vorne</span>
-                </div>                
+                    <div class="box box3">
+                        <span class="right-text">ganz Vorne</span>
+                    </div>
+                </div>
             </div>
 
         </div>
