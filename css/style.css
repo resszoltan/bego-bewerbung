@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------
     CSS für persönliche Portfolio-Seite
     Autor: Zoltan Ress
-    Datum: 2025-12-01
+    Datum: 2025-12-02
 ----------------------------------------------------------- */
 
 * {
@@ -34,7 +34,8 @@ img.choose {
     width: 170px;
     max-width: 100%;
     height: auto;
-    border: 1px solid white;
+    border: 2px solid white;
+    border-radius: 20px;
 }
 
 
@@ -113,14 +114,16 @@ img.choose {
 }
 .deko1 {
     background-color: white;
-    width: 52%;
+    width: 62%;
+    height: 3px;
     margin-bottom: 1.5rem;
 }
 .das-ist {
     letter-spacing: 3px;
 }
 .unterst {
-    letter-spacing: 7px;
+    letter-spacing: 8px;
+    margin-right: 8px;
 }
 .name-proj {
     letter-spacing: 15px;
@@ -138,6 +141,7 @@ img.choose {
     /*background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);*/
     background-color: rgb(230, 170, 20);
 }
+
 .card[data-card="choose"] h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
