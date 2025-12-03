@@ -1,0 +1,203 @@
+/* -----------------------------------------------------------
+    CSS für persönliche Portfolio-Seite
+    Autor: Zoltan Ress
+    Datum: 2025-12-03
+----------------------------------------------------------- */
+
+/* Variablen */
+:root{
+    --accent: rgb(230,170,20);
+    --accent-hover: rgb(210,150,15);
+    --bg-h-a: #04504b;
+    --bg-h-b: #101945;
+    --text: #111;
+    --card: #ffffff9c;
+    --border: #ddd;
+    --shadow: 0 3px 5px rgba(0,0,0,0.3);
+}
+
+body.dark{
+    --bg-d-a: #1e1e1e;
+    --text: #e4e4e4;
+    --card: #2b2b2b;
+    --border: #444;
+    --accent: rgb(230,170,20);
+    --accent-hover: rgb(210,150,15);
+}
+
+/* Grundlayout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(127, 127, 127);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    transition: background .25s, color .25s;
+}
+
+.viewport {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 93vh;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-h-a) 0%, var(--bg-h-b) 100%);
+    border: 10px solid rgb(127, 127, 127);
+    border-radius: 50px;
+}
+
+.app-container{
+    width: 90%;
+    max-width: 400px;
+    background: var(--card);
+    padding: 20px 25px 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.12);
+    transition: background .25s;
+}
+
+/* Header */
+.header-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dark-btn{
+    font-size:20px;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 8px;
+    background: var(--accent);
+    font-size:20px;
+    text-shadow: var(--shadow);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+.dark-btn:hover{ background: var(--accent-hover); }
+
+/* Input */
+.input-row{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+#todo-input{
+    flex:1;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--text);
+    font-size:1rem;
+}
+#add-btn{
+    width:50px;
+    height:50px;
+    background:var(--accent);
+    border:none;
+    border-radius:10px;
+    font-size:24px;
+    color:white;
+    text-shadow: var(--shadow);
+    cursor:pointer;
+    box-shadow: var(--shadow);
+}
+#add-btn:hover{ background: var(--accent-hover); }
+
+/* Liste */
+#todo-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.todo-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background: var(--card);
+    border:1px solid var(--border);
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:10px;
+    box-shadow: var(--shadow);
+    transition: box-shadow .15s, transform .15s, opacity .2s;
+}
+
+/* Einblend-Animation: nur wenn .added gesetzt wird */
+.todo-item.added{
+    animation: fadeIn .35s ease forwards;
+}
+@keyframes fadeIn{
+    from{ opacity:0; transform: translateY(10px); }
+    to{ opacity:1; transform: translateY(0); }
+}
+
+/* Entfernen-Animation */
+.todo-item.removed{
+    animation: fadeOut .25s ease forwards;
+}
+@keyframes fadeOut{
+    to{ opacity:0; transform: translateX(40px); height:0; margin:0; padding:0; }
+}
+
+.todo-left{ display:flex; align-items:center; gap:10px; }
+.todo-text{ font-size:1rem; }
+.todo-text.done{ text-decoration:line-through; font-style: italic; color: gray; }
+
+.delete-btn{
+    background:none;
+    border:none;
+    color:#cc0000;
+    font-size: 2rem;
+    cursor:pointer;
+}
+
+/* Drag & Drop visueller Hinweis */
+.todo-item.dragging{ opacity:0.5; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+.todo-item.drag-over{ border:2px dashed var(--accent); }
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+}
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}

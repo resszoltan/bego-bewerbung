@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------
     CSS für persönliche Portfolio-Seite
     Autor: Zoltan Ress
-    Datum: 2025-12-02
+    Datum: 2025-12-03
 ----------------------------------------------------------- */
 
 * {
@@ -139,13 +139,15 @@ img.choose {
 /* Choose Your Character ------------------------------------ */
 .card[data-card="choose"] {
     /*background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);*/
-    background-color: rgb(230, 170, 20);
+    background: linear-gradient(135deg, #c78772 0%, #072326 100%);
+    /*background-color: rgb(230, 170, 20);*/
 }
 
 .card[data-card="choose"] h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    text-shadow: 0px 3px 3px rgb(127, 127, 127);
+    /*text-shadow: 0px 3px 3px rgb(127, 127, 127);*/
+    text-shadow: 0px 3px 3px rgb(50, 50, 50);
 }
 .card[data-card="choose"] .content {
     max-width: 400px;
@@ -166,7 +168,7 @@ img.choose {
     position: relative;
     top: 0px;
     background-color: white;
-    height: 270px;
+    height: 260px;
     width: 4px;
     margin: 0;
 }
@@ -186,16 +188,16 @@ img.choose {
 
 /* Der ITler ------------------------------------------------ */
 .card[data-card="itler"] {
-    /*background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
-    background-color: rgb(230, 170, 20);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /*background-color: rgb(230, 170, 20);*/
 }
 .card[data-card="itler"] h2 {
     font-size: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     text-shadow: 0px 3px 3px rgb(127, 127, 127);
 }
 .card[data-card="itler"] .content {
-    max-width: 400px;
+    max-width: 300px;
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
@@ -206,81 +208,202 @@ img.choose {
 
 /* Der Jurist ----------------------------------------------- */
 .card[data-card="jurist"] {
-    /*background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);*/
-    background-color: rgb(230, 170, 20);
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    /*background-color: rgb(230, 170, 20);*/
 }
 .card[data-card="jurist"] h2 {
     font-size: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     text-shadow: 0px 3px 3px rgb(127, 127, 127);
 }
 .card[data-card="jurist"] .content {
-    max-width: 400px;
+    max-width: 300px;
     font-family: sans-serif;
     font-size: 1.2rem;
-    line-height: 2rem;
+    line-height: 1.5rem;
     text-align: justify;
+}
+/* Progress Circles */
+.progress-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+.progress-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+}
+.progress-circle svg {
+    transform: rotate(90deg);
+    width: 100%;
+    height: 100%;
+}
+.progress-circle-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.2);
+    stroke-width: 8;
+}
+.progress-circle-fill {
+    fill: none;
+    stroke: white;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 0 1000;
+    transition: stroke-dasharray 2s ease-out;
+}
+.progress-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    color: white;
+}
+.progress-text {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    text-align: left;
 }
 
 
 
 /* Angewandte Technologien ---------------------------------- */
 .card[data-card="tech"] {
-    /*background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);*/
-    background-color: rgb(230, 170, 20);
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    /*background-color: rgb(230, 170, 20);*/
 }
 .card[data-card="tech"] h2 {
     font-size: 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     text-shadow: 0px 3px 3px rgb(127, 127, 127);
 }
 .card[data-card="tech"] .content {
-    max-width: 400px;
+    max-width: 300px;
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
     text-align: justify;
+}
+.deko3 {
+    background-color: white;
+    width: 100%;
+    height: 3px;
+    margin: 2rem 0;
+}
+li {
+    margin-left: 40px;
+}
+.small-text {
+    font-size: 0.9rem;
 }
 
 
 
 /* Zertifikate ---------------------------------------------- */
 .card[data-card="zertifikate"] {
-    /*background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);*/
-    background-color: rgb(230, 170, 20);
-    /*color: #333;*/
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    /*background-color: rgb(230, 170, 20);*/
+    color: #464646;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+.card[data-card="zertifikate"].dark-mode {
+    background: linear-gradient(135deg, #121212 0%, #192a56 100%);
+    /*background-color: rgb(230, 170, 20);*/
+    color: #e0e0e0;
 }
 .card[data-card="zertifikate"] h2 {
     font-size: 2rem;
     margin-bottom: 4rem;
-    /*color: #333;*/
-    text-shadow: 0px 3px 3px rgb(127, 127, 127);
+    color: #464646;
+    text-shadow: 0px 3px 3px rgb(148, 148, 148);
+}
+.card[data-card="zertifikate"].dark-mode h2 {
+    /*font-size: 2rem;
+    margin-bottom: 4rem;*/
+    color: #ffffff;
+    text-shadow: 0px 3px 3px black;
 }
 .card[data-card="zertifikate"] .content {
-    max-width: 400px;
+    max-width: 300px;
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
     text-align: justify;
+    color: #464646;
+}
+.card[data-card="zertifikate"] a {
+    color: #464646;
+}.card[data-card="zertifikate"] a:hover {
+    color: #0a78b0;
+}
+.card[data-card="zertifikate"].dark-mode .content {
+    color: #e0e0e0;
+}
+.card[data-card="zertifikate"] li {
+    font-family: sans-serif;
+    color: #464646;
+}
+.card[data-card="zertifikate"].dark-mode li {
+    color: #ffffff;
+}
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.dark-mode-toggle:hover {
+    transform: scale(1.1) rotate(45deg);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+.dark-mode-toggle:active {
+    transform: scale(0.95);
+}
+.card[data-card="zertifikate"].dark-mode .dark-mode-toggle {
+    background: rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 
 
 /* Danke schön ---------------------------------------------- */
 .card[data-card="ende"] {
-    /*background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);*/
-    background-color: rgb(230, 170, 20);
+    background: linear-gradient(135deg, #fa709a 0%, #e6aa20 100%);
+    /*background-color: rgb(230, 170, 20);*/
 }
 .card[data-card="ende"] h2 {
     font-size: 2.5rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     text-shadow: 0px 3px 3px rgb(127, 127, 127);
 }
 .card[data-card="ende"] .content {
-    max-width: 400px;
+    max-width: 300px;
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
+}
+.deko4 {
+    background-color: white;
+    width: 75%;
+    height: 3px;
+    margin-bottom: 2rem;
 }
 
 
@@ -401,9 +524,38 @@ img.choose {
     position: relative;
     top: -22px } /* diese Box ist für Texte auf der rechten Seite des Buttons */
 
+/* Navigation Button ---------------------------------------- */
+.nav-button {
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 3px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.nav-button:hover {
+    background-color: white;
+    color: #333;
+    transform: scale(1.05);
+}
+
+.centered-div {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.margin-bottom {
+    margin-bottom: 10px;
+}
 
 /* Media Query ---------------------------------------------- */
-@media (min-width: 1920px) {
+@media (min-width: 1900px) {
     .card { height: 100vh; }
 
     .hello { font-size: 7em; letter-spacing: 5px; }
