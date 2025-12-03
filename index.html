@@ -139,32 +139,41 @@
                 <h2>Der ITler</h2>
 
                 <div class="content">
-                    <p>20 Zeilen Text...<br>
-                    Z. 2<br>
-                    Z. 3<br>
-                    Z. 4<br>
-                    Z. 5<br>
-                    Z. 6<br>
-                    Z. 7<br>
-                    Z. 8<br>
-                    Z. 9<br>
-                    Z. 10<br>
-                    Z. 11<br>
-                    Z. 12<br>
-                    Z. 13<br></p>
+                    <p>Als Junior Developer bin ich auf ständiges Lernen ausgerichtet. 
+                        Ich kann mich in fast jede Technologie zügig einarbeiten. 
+                        Ich kann sogar den Zauberwürfel bauen! Siehe da:<br><br></p>
+                    <div class="centered-div">
+                        <button class="nav-button margin-bottom" onclick="window.open('html/calculator.html', '_blank')">🧮 Taschenrechner</button>
+                        <button class="nav-button margin-bottom" onclick="window.open('html/todo.html', '_blank')">📋 Simple ToDo List</button>
+                        <button class="nav-button" onclick="window.open('html/quiz.html', '_blank')">🥸 Witziges Mini-Quiz</button>
+                        <div style="display: flex; justify-content: center;">+</div>
+                        <button class="nav-button" onclick="window.open('html/calculator.html', '_blank')">👁️ Zauberwürfelbeweis</button>
+                    </div>
                 </div>
 
-                <!-- Navigation 3.1 (Down button) -->
-                <button class="arrow-button" onclick="navigateCard('itler', 'tech', 'up')">
-                    <div class="arrow-circle arrow-bounce-down">
-                        <svg class="arrow arrow-bounce-down" width="50" height="50" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
-                            <path d="M12 6v12m0 0l-4-4m4 4l4-4"
-                            stroke="rgb(127,127,127)" stroke-width="3" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" transform="rotate(180)" transform-origin="center" />
-                        </svg>
+                <div class="container">
+                    <!-- Text 1 -->
+                    <div class="box box1">
+                        <span class="left-text">technische</span>
                     </div>
-                </button>
+                    <!-- Navigation 3.1 -->
+                    <div class="box box2">
+                        <button class="arrow-button" onclick="navigateCard('itler', 'tech', 'up')">
+                            <div class="arrow-circle arrow-bounce-down">
+                                <svg class="arrow arrow-bounce-down" width="50" height="50" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                                    <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                                    stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" transform="rotate(180)" transform-origin="center" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Text 2 -->
+                    <div class="box box3">
+                        <span class="right-text">Übersicht</span>
+                    </div>
+                </div>
             </div>
 
 
@@ -173,45 +182,97 @@
                 <h2>Der Jurist</h2>
 
                 <div class="content">
-                    1500+ Verträge im Bereich des Immobilienrechts erstellt.<br>
-                    3000+ Mandanten erfolgreich beraten und vertreten.<br>
-                    50+ Gerichtsverfahren gewonnen.<br>
-                    1000+ Stunden Fortbildungen im Bereich IT-Recht und Datenschutz absolviert.<br>
-                    200+ Datenschutzkonzepte für Unternehmen entwickelt und implementiert.<br>                
+                    Was für andere eine trockene Langeweile ist, ist mein natürlicher 
+                    Lebensraum: Der Wald der Paragrafen und Klauseln.
+                </div>
+                
+                <div style="display: flex; flex-direction: column; justify-content: flex-start;">
+                    <div class="progress-item">
+                        <div class="progress-circle">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="progress-circle-bg" cx="60" cy="60" r="52" 
+                                        stroke-dasharray="245 327" stroke-dashoffset="-41" />
+                                <circle class="progress-circle-fill" id="progress1" cx="60" cy="60" r="52" 
+                                        stroke-dasharray="0 327" stroke-dashoffset="-41" />
+                            </svg>
+                            <div class="progress-number" id="counter1">0</div>
+                        </div>
+                        <div class="progress-text">
+                            Immobilienkaufsverträge<br>erstellt
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-circle">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="progress-circle-bg" cx="60" cy="60" r="52" 
+                                        stroke-dasharray="245 327" stroke-dashoffset="-41" />
+                                <circle class="progress-circle-fill" id="progress2" cx="60" cy="60" r="52" 
+                                        stroke-dasharray="0 327" stroke-dashoffset="-41" />
+                            </svg>
+                            <div class="progress-number" id="counter2">0</div>
+                        </div>
+                        <div class="progress-text">
+                            Mandanten erfolgreich<br>beraten und vertreten
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content">
+                    in nur den ersten drei Jahren meiner über 15-jährigen* 
+                    Praxis in Budapest.
+                
+                    <div style="display: flex; justify-content: center;"><hr class="deko3"></div>
+
+                    <span class="small-text">* Mit Referendariat und Staatsexamen.</span>
                 </div>
 
-                <!-- Navigation 4.1 (Down button) -->
-                <button class="arrow-button" onclick="navigateCard('jurist', 'zertifikate', 'up')">
-                    <div class="arrow-circle arrow-bounce-down">
-                        <svg class="arrow arrow-bounce-down" width="50" height="50" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
-                            <path d="M12 6v12m0 0l-4-4m4 4l4-4"
-                            stroke="rgb(127,127,127)" stroke-width="3" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round" transform="rotate(180)" transform-origin="center" />
-                        </svg>
+                <div class="container">
+                    <!-- Text 1 -->
+                    <div class="box box1">
+                        <span class="left-text">zu den</span>
                     </div>
-                </button>
+                    <!-- Navigation 4.1 (Down button) -->
+                    <div class="box box2">
+                        <button class="arrow-button" onclick="navigateCard('jurist', 'zertifikate', 'up')">
+                            <div class="arrow-circle arrow-bounce-down">
+                                <svg class="arrow arrow-bounce-down" width="50" height="50" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                                    <path d="M12 6v12m0 0l-4-4m4 4l4-4"
+                                    stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" transform="rotate(180)" transform-origin="center" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- Text 2 -->
+                    <div class="box box3">
+                        <span class="right-text">Zertifikaten</span>
+                    </div>
+                </div>
             </div>
 
 
             <!-- Angewandte Technologien -->
             <div class="card" data-card="tech">
-                <h2>Angewandte<br>Technologien</h2>
+                <h2>Angewandte<br>Tools & Technologien</h2>
 
                 <div class="content">
-                    20 Zeilen Text...<br>
-                    Z. 2<br>
-                    Z. 3<br>
-                    Z. 4<br>
-                    Z. 5<br>
-                    Z. 6<br>
-                    Z. 7<br>
-                    Z. 8<br>
-                    Z. 9<br>
-                    Z. 10<br>
-                    Z. 11<br>
-                    Z. 12<br>
-                    Z. 13<br>
+                    <p>Die Präse wurde geschafft mit:</p>
+                    <ul>
+                        <li>HTML5</li>
+                        <li>CSS3 (Flexbox, Responsive)</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>Visual Studio Code</li>
+                        <li>Git & GitHub</li>
+                        <li>LLM: Claude Sonnet 4.5</li>
+                    </ul>
+
+                    <div style="display: flex; justify-content: center;"><hr class="deko3"></div>
+
+                    <span class="small-text">Ich habe mich sonst auch besser mit Java in 
+                        Low-Code (PrimeFaces, Axon Ivy) sowie TypeScript mit 
+                        Angular schon vertraut gemacht. Nach einer kurzen Aufwärmung 
+                        spreche ich gut auch SQL.</span>
                 </div>
 
                 <!-- Navigation 5.1 (End button) -->
@@ -230,22 +291,43 @@
 
             <!-- Zertifikate -->
             <div class="card" data-card="zertifikate">
+                <div class="content small-text" style="position: relative; top: -22px; right: -75px; font-family: sans-serif; font-size: 0.8rem;">Dunkel/Hell-Modus</div>
+                <button class="dark-mode-toggle" id="darkModeToggle" onclick="toggleDarkMode()"> 🌙 </button>
+
                 <h2>Zertifikate</h2>
 
                 <div class="content">
-                    20 Zeilen Text...<br>
-                    Z. 2<br>
-                    Z. 3<br>
-                    Z. 4<br>
-                    Z. 5<br>
-                    Z. 6<br>
-                    Z. 7<br>
-                    Z. 8<br>
-                    Z. 9<br>
-                    Z. 10<br>
-                    Z. 11<br>
-                    Z. 12<br>
-                    Z. 13<br>
+                    Eine Auswahl meiner wichtigsten Dokumente (mit Herunterladen):<br><br>
+                    <ul>
+                         <li>
+                            <a href="docs/Diplom-ZoltanRess.pdf" target="_blank">Juristisches Diplom</a>
+                        </li>
+                        <li>
+                            <a href="docs/Bescheinigung_Anwaltskammer-ZoltanRess.pdf" target="_blank">Anwaltskammer Budapest</a>
+                        </li>
+                    </ul>
+
+                    <div style="display: flex; flex-direction: column; justify-content: center;"><hr class="deko3"></div>
+
+                    <ul>
+                        <li>
+                            <a href="docs/IHK_Zertifikat-ZoltanRess.pdf" target="_blank">IHK Zertifikat Bremen</a>
+                        </li>
+                    </ul>
+                    
+                    <div style="display: flex; flex-direction: column; justify-content: center;"><hr class="deko3"></div>
+                    
+                    <ul>
+                        <li>
+                            <a href="docs/Arbeitszeugnis-ZoltanRess.pdf" target="_blank">Arbeitszeugnis</a>
+                        </li>
+                        <li>
+                            <a href="docs/Lebenslauf-ZoltanRess.pdf" target="_blank">Lebenslauf</a>
+                        </li>
+                        <li>
+                            <a href="docs/Anschreiben-ZoltanRess.pdf" target="_blank">Anschreiben</a>
+                        </li>
+                    </ul>
                 </div>
 
                 <!-- Navigation 6.1 (End button) -->
@@ -266,8 +348,10 @@
             <div class="card" data-card="ende">
                 <h2>Danke schön!</h2>
 
+                <hr class="deko4">
+
                 <div class="content">
-                    <p>Vielen Dank für Ihre Zeit und Ihr Interesse.<br>
+                    <p>Vielen Dank für Ihre Zeit und Ihr Interesse an meinem Web-Präsentation. 
                         Ich freue mich auf ein persönliches Gespräch!</p>
                 </div>
 
