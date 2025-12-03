@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ToDo Liste</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Russo+One&display=swap">
+        <link rel="stylesheet" href="../css/todo.css" />
+    </head>
+
+    <body>
+        <div class="viewport">
+
+            <div class="card">
+                <div class="app-container">
+
+                    <div class="header-row">
+                        <h1>Meine TODOs</h1>
+                        <button id="darkmode-toggle" class="dark-btn" aria-label="Dark Mode umschalten">🌙</button>
+                    </div>
+
+                    <div class="input-row">
+                        <input id="todo-input" type="text" placeholder="Neue Aufgabe hinzufügen..." />
+                        <button id="add-btn" aria-label="Aufgabe hinzufügen">+</button>
+                    </div>
+
+                    <ul id="todo-list" aria-live="polite"></ul>
+                </div>
+
+                <button class="back-btn maring-top" onclick="window.close()">← Zurück zum Portfolio</button>
+            </div>
+
+        </div>
+
+        <script src="../js/todo.js"></script>
+    </body>
+</html>
