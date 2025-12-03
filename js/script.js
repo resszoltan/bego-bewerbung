@@ -1,11 +1,12 @@
 /* -----------------------------------------------------------
     JavaScript für persönliche Portfolio-Seite
     Autor: Zoltan Ress
-    Datum: 2025-12-01
+    Datum: 2025-12-03
 ----------------------------------------------------------- */
 
 let chooseVisitCount = 0;
 let isAnimating = false;
+let isDarkMode = false;
 
 function navigateCard(fromCard, toCard, direction) {
     if (isAnimating) return;
@@ -26,6 +27,13 @@ function navigateCard(fromCard, toCard, direction) {
         if (chooseVisitCount >= 2) {
             document.getElementById('homeButton').classList.add('visible');
         }
+    }
+
+    // Start circle- and counter-animations when navigating to Jurist card
+    if (toCard === 'jurist') {
+        setTimeout(() => {
+            animateProgressCircles();
+        }, 300);
     }
 
     // SCHRITT 1: Setze toCard in Schicht 2 (next-card, z-index 50)
@@ -170,5 +178,97 @@ function handleSwipeGesture(currentCard, direction) {
         const [from, to, dir] = swipeMap[currentCard][direction];
         navigateCard(from, to, dir);
     }
+}
 
+// Prüfe URL-Parameter beim Laden
+window.addEventListener('DOMContentLoaded', () => {
+    const returnCard = sessionStorage.getItem('returnCard');
+    
+    if (returnCard) {
+        navigateCard('landing', returnCard, 'up');
+        sessionStorage.removeItem('returnCard');
+    }
+});
+
+function toggleDarkMode() {
+    const zertifikateCard = document.querySelector('[data-card="zertifikate"]');
+    const toggleButton = document.getElementById('darkModeToggle');
+    
+    isDarkMode = !isDarkMode;
+    
+    if (isDarkMode) {
+        zertifikateCard.classList.add('dark-mode');
+        toggleButton.textContent = '🌞';
+    } else {
+        zertifikateCard.classList.remove('dark-mode');
+        toggleButton.textContent = '🌙';
+    }
+}
+
+function animateProgressCircles() {
+    console.log('Animation gestartet!'); // Debug
+    
+    // Reset circles first
+    const circle1 = document.getElementById('progress1');
+    const circle2 = document.getElementById('progress2');
+    const counter1 = document.getElementById('counter1');
+    const counter2 = document.getElementById('counter2');
+    
+    if (!circle1 || !circle2) {
+        console.error('Circles nicht gefunden!');
+        return;
+    }
+    
+    // Explizit auf 0 setzen
+    circle1.style.transition = 'none';
+    circle2.style.transition = 'none';
+    circle1.style.strokeDasharray = '0 326.73';
+    circle2.style.strokeDasharray = '0 326.73';
+    counter1.textContent = '0';
+    counter2.textContent = '0';
+    
+    // Force reflow
+    circle1.offsetHeight;
+    circle2.offsetHeight;
+    
+    // Start animations
+    setTimeout(() => {
+        circle1.style.transition = 'stroke-dasharray 2s cubic-bezier(0.4, 0, 0.2, 1)';
+        circle2.style.transition = 'stroke-dasharray 2s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        circle1.style.strokeDasharray = '245.04 326.73';
+        circle2.style.strokeDasharray = '245.04 326.73';
+        
+        animateCounter('counter1', 0, 1500, 2000, true);
+        animateCounter('counter2', 0, 3300, 2000, true);
+        
+        console.log('Animation sollte laufen!'); // Debug
+    }, 100);
+}
+
+function animateCounter(elementId, start, end, duration, addPlus = false) {
+    const element = document.getElementById(elementId);
+    if (!element) {
+        console.error('Counter element nicht gefunden:', elementId);
+        return;
+    }
+    
+    const startTime = performance.now();
+    
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function (ease-out)
+        const easeProgress = 1 - Math.pow(1 - progress, 3);
+        
+        const current = Math.floor(start + (end - start) * easeProgress);
+        element.textContent = current + (progress === 1 && addPlus ? '+' : '');
+        
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        }
+    }
+    
+    requestAnimationFrame(update);
 }
