@@ -398,6 +398,7 @@ li {
     font-family: sans-serif;
     font-size: 1.2rem;
     line-height: 2rem;
+    text-align: justify;
 }
 .deko4 {
     background-color: white;
@@ -507,22 +508,25 @@ li {
 .box {
     flex: 0 0 auto;             /* verhindert, dass Flex sie vergrößert/verkleinert */
 }
-.box1 {
+.box1 {                         /* diese Box ist für Texte auf der linken Seite des Buttons */
     width: 100px;
     display: flex;
     justify-content: flex-end;
     position: relative;
-    top: -22px }   /* diese Box ist für Texte auf der linken Seite des Buttons */
-.box2 {
+    top: -22px;
+}
+.box2 {                         /* diese Box ist für den Button */
     width: 70px;
     display: flex;
-    justify-content: center; }     /* diese Box ist für den Button */
-.box3 {
+    justify-content: center;
+}
+.box3 {                         /* diese Box ist für Texte auf der rechten Seite des Buttons */
     width: 100px;
     display: flex;
     justify-content: flex-start;
     position: relative;
-    top: -22px } /* diese Box ist für Texte auf der rechten Seite des Buttons */
+    top: -22px;
+}
 
 /* Navigation Button ---------------------------------------- */
 .nav-button {
