@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vorstellungsvideo</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Russo+One&display=swap">
+        <link rel="stylesheet" href="../css/video.css" />
+    </head>
+
+    <body>
+        <div class="viewport">
+
+            <div class="card video">
+
+                <!-- Einführung -->
+                <h2>Zauberwürfelbeweis</h2>
+                
+                <div class="content">
+                    <span style="font-style: italic;">Wo ein Wille, da ein Weg.</span><br>
+                    Und manchmal führt dieser Weg direkt... zum Zauberwürfel!<br>
+                    Um Ihnen meine Lern-PS zu demonstrieren, habe ich mir neben der Bewerbung beigebracht, 
+                    das Ding zügig lösen.<br>
+                    Ergebnis: Unter drei Minuten gelöst, keine Schnitte, kein Trick... 
+                    nur <strong>Learning-Mode ON</strong>.
+                </div><br>
+
+                <button class="back-button" onclick="openVideoModal()">
+                    ▶️ Video angucken
+                </button><br>
+            
+                <!-- Video -->
+                <div class="video-modal" id="videoModal">
+                    <div class="video-container">
+                        <button class="close-button" onclick="closeVideoModal()">✕</button>
+
+                        <video width="297" height="528" id="video" controls>
+                            <source src="../img/ZW.mp4">
+                            Ihr Browser unterstützt das 'video-tag' nicht. Sie können diesen 
+                            <a href="https://youtube.com/shorts/EY0giwsC_fM" target="_blank">Link zum YouTube</a> verwenden, 
+                            um das Video anzugucken.
+                        </video>
+                    </div>
+                </div>
+                
+                <button class="back-button" onclick="window.close()">← Zurück zum Portfolio</button>
+
+            </div>
+
+        </div>
+
+        <script src="../js/video.js"></script>
+    </body>
+    
+</html>
