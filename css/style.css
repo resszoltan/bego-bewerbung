@@ -274,7 +274,7 @@ img.choose {
 
 /* Angewandte Technologien ---------------------------------- */
 .card[data-card="tech"] {
-    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    background: linear-gradient(135deg, #43e97b 0%, #38a5f9 100%);
     /*background-color: rgb(230, 170, 20);*/
 }
 .card[data-card="tech"] h2 {
