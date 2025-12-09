@@ -203,7 +203,7 @@ body {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border-radius: 30px;
-    padding: 40px;
+    padding: 20px;
     max-width: 550px;
     width: 95%;
     text-align: center;
