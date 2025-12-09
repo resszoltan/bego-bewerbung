@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memory Demo</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Russo+One&display=swap">
+        <link rel="stylesheet" href="../css/memory.css" />
+    </head>
+
+    <body>
+        <div class="game-container">
+            <div class="game-header">
+                <h1 class="game-title">🎮 Memory Game Demo</h1>
+                
+                <div class="game-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Zeit</div>
+                        <div class="stat-value" id="timeDisplay">0:00</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Züge</div>
+                        <div class="stat-value" id="movesDisplay">0</div>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button class="control-btn" onclick="restartGame()" title="Neu starten">🔄</button>
+                    <button class="control-btn" onclick="showHighscores()" title="Bestenliste">📊</button>
+                    <button class="control-btn" onclick="exitGame()" title="Beenden">✕</button>
+                </div>
+            </div>
+
+            <div class="game-board" id="gameBoard"></div>
+        </div>
+
+        <!-- Highscore Modal -->
+        <div class="modal" id="highscoreModal">
+            <div class="modal-content">
+                <h2 class="modal-title">📊 Bestenliste</h2>
+                <div class="highscore-list" id="highscoreList"></div>
+                <button class="modal-button" onclick="closeHighscores()">Zurück</button>
+            </div>
+        </div>
+
+        <!-- Win Modal -->
+        <div class="modal" id="winModal">
+            <div class="modal-content">
+                <h2 class="modal-title">🎉 Gratulation!</h2>
+                <p style="font-size: 1.2rem; color: #333; margin: 20px 0;">
+                    Du hast das Spiel gewonnen!
+                </p>
+                <div style="font-size: 1.1rem; color: #666; margin: 15px 0;">
+                    <strong>Zeit:</strong> <span id="finalTime"></span><br>
+                    <strong>Züge:</strong> <span id="finalMoves"></span>
+                </div>
+                <div class="highscore-list" id="winHighscores"></div>
+                <button class="modal-button" onclick="restartGame()">Nochmal spielen</button>
+                <button class="modal-button" onclick="exitGame()">Beenden</button>
+            </div>
+        </div>
+
+        <script src="../js/memory.js"></script>
+    </body>
+</html>
