@@ -145,28 +145,23 @@ body {
     transform-style: preserve-3d;
     border: 2px solid rgba(255, 255, 255, 0.4);
 }
-
 .card:hover:not(.flipped):not(.matched) {
     transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-
 .card.flipped {
     background: rgba(255, 255, 255, 0.9);
     transform: rotateY(180deg);
 }
-
 .card.matched {
     background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
     transform: scale(0.95);
     animation: matchPulse 0.5s ease;
 }
-
 @keyframes matchPulse {
     0%, 100% { transform: scale(0.95); }
     50% { transform: scale(1.1); }
 }
-
 .card-back {
     position: absolute;
     width: 100%;
@@ -177,7 +172,6 @@ body {
     backface-visibility: hidden;
     font-size: 2rem;
 }
-
 .card-front {
     position: absolute;
     width: 100%;
@@ -202,21 +196,18 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .modal.active {
     display: flex;
 }
-
 .modal-content {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border-radius: 30px;
     padding: 40px;
-    max-width: 500px;
-    width: 90%;
+    max-width: 550px;
+    width: 95%;
     text-align: center;
 }
-
 .modal-title {
     font-size: 2rem;
     color: #667eea;
@@ -230,7 +221,6 @@ body {
     padding: 20px;
     margin: 20px 0;
 }
-
 .highscore-item {
     display: flex;
     justify-content: space-between;
@@ -238,7 +228,6 @@ body {
     border-bottom: 1px solid rgba(102, 126, 234, 0.2);
     color: #333;
 }
-
 .highscore-item:last-child {
     border-bottom: none;
 }
