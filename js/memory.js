@@ -230,7 +230,7 @@ function displayHighscoresInModal(elementId) {
         return `
             <div class="highscore-item">
                 <span>${medal} ${timeStr} - ${score.moves} Züge</span>
-                <span style="font-size: 0.9rem; color: #999;">${score.date}</span>
+                <span style="font-size: 0.9rem; ">${score.date}</span>
             </div>
         `;
     }).join('');
