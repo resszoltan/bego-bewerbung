@@ -218,14 +218,14 @@ body {
 .highscore-list {
     background: rgba(102, 126, 234, 0.1);
     border-radius: 15px;
-    padding: 10px;
+    padding: 20px;
     margin: 20px 0;
 }
 .highscore-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10x 5px;
+    padding: 15px 0;
     border-bottom: 1px solid rgba(102, 126, 234, 0.2);
     color: #333;
 }
