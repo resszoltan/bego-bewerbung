@@ -1,14 +1,63 @@
 /* -----------------------------------------------------------
-    CSS für persönliche Portfolio-Seite
+    CSS für persönliche Portfolio-Seite (Optimiert)
     Autor: Zoltan Ress
-    Datum: 2025-12-03
+    Datum: 2025-12-10
 ----------------------------------------------------------- */
 
+
+/* ==========================================================
+    CSS CUSTOM PROPERTIES (VARIABLEN)
+========================================================== */
+:root {
+    /* Farben */
+    --color-white: white;
+    --color-gray: rgb(127, 127, 127);
+    --color-dark-text: #464646;
+    --color-light-text: #e0e0e0;
+    
+    /* Schatten */
+    --shadow-light: 0px 3px 3px rgb(127, 127, 127);
+    --shadow-dark: 0px 3px 3px rgb(50, 50, 50);
+    --shadow-heavy: 0px 4px 5px rgb(127, 127, 127);
+    
+    /* Schriftgrößen */
+    --font-size-small: 0.9rem;
+    --font-size-base: 1rem;
+    --font-size-medium: 1.2rem;
+    --font-size-large: 1.5rem;
+    --font-size-xlarge: 2rem;
+    --font-size-xxlarge: 2.5rem;
+    --font-size-huge: 4rem;
+    --font-size-massive: 5rem;
+    
+    /* Abstände */
+    --spacing-xs: 3px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+    --spacing-huge: 4rem;
+    
+    /* Animationen */
+    --transition-standard: 0.3s ease;
+    --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Z-Index Layers */
+    --z-storage: 1;
+    --z-next: 50;
+    --z-current: 100;
+}
+
+
+/* ==========================================================
+    RESET & BASE STYLES
+========================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
+    color: var(--color-white);
 }
 
 body {
@@ -16,7 +65,12 @@ body {
     font-weight: 400;
     font-style: normal;
     overflow: hidden;
-    background-color: rgb(127, 127, 127);
+    background-color: var(--color-gray);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .viewport {
@@ -26,210 +80,312 @@ body {
     overflow: hidden;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+
+/* ==========================================================
+    UTILITY CLASSES (Wiederverwendbare Komponenten)
+========================================================== */
+
+/* Typografie */
+.font-russo {
+    font-family: "Russo One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
-img.choose {
-    width: 170px;
-    max-width: 100%;
-    height: auto;
-    border: 2px solid white;
-    border-radius: 20px;
+
+.font-sans {
+    font-family: sans-serif;
+}
+
+/* Dekorative Linien */
+.deko-line {
+    background-color: var(--color-white);
+    height: 3px;
+}
+
+.deko1 {
+    width: 62%;
+    margin-bottom: 1.5rem;
+}
+
+.deko2 {
+    position: relative;
+    height: 260px;
+    width: 4px;
+    margin: 0;
+}
+
+.deko3 {
+    width: 100%;
+    margin: var(--spacing-xl) 0;
+}
+
+.deko4 {
+    width: 75%;
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Content Container */
+.content-base {
+    font-family: sans-serif;
+    font-size: var(--font-size-medium);
+    line-height: 2rem;
+    text-align: justify;
+}
+
+.content-narrow {
+    max-width: 300px;
+}
+
+.content-medium {
+    max-width: 400px;
 }
 
 
+/* ==========================================================
+    CARD SYSTEM (Basis)
+========================================================== */
 .card {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 93vh;
-    padding: 20px 10px;
-    border: 10px solid rgb(127, 127, 127);
+    padding: var(--spacing-md) var(--spacing-sm);
+    border: 10px solid var(--color-gray);
     border-radius: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform var(--transition-slow);
+    z-index: var(--z-storage);
 }
 
-/* Drei-Schichten-System */
-/* Schicht 1 (Lager): z-index 1 - nicht sichtbare Cards */
-.card {
-    z-index: 1;
-}
-
-/* Schicht 2 (Nächste Card): z-index 50 - wird als nächstes sichtbar */
 .card.next-card {
-    z-index: 50;
+    z-index: var(--z-next);
 }
 
-/* Schicht 3 (Aktuelle Card): z-index 100 - aktuell sichtbar */
 .card.current-card {
-    z-index: 100;
+    z-index: var(--z-current);
+}
+
+/* Card Header (gemeinsam für alle Cards) */
+.card h2 {
+    font-size: var(--font-size-xlarge);
+    margin-bottom: var(--spacing-xl);
+    text-shadow: var(--shadow-light);
+}
+
+/* Card Content (gemeinsam für alle Cards) */
+.card .content {
+    max-width: 300px;
+    font-family: sans-serif;
+    font-size: var(--font-size-medium);
+    line-height: 2rem;
+    text-align: justify;
 }
 
 
-
-/* Landing Page -------------------------------------------- */
+/* ==========================================================
+    CARD THEMES (Nur Farben/spezifische Stile)
+========================================================== */
 .card[data-card="landing"] {
     background-color: rgb(230, 170, 20);
 }
+
 .card[data-card="landing"] h1 {
-    text-shadow: 0px 4px 5px rgb(127, 127, 127);
+    text-shadow: var(--shadow-heavy);
 }
-.hello {font-family: "Russo One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 4rem;
-    letter-spacing: 2px;
-}
-.bego {font-family: "Russo One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 5rem;
-    margin-bottom: 4rem;
-}
+
 .card[data-card="landing"] p {
     font-family: sans-serif;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     line-height: 2rem;
     max-width: 400px;
     margin-bottom: 1.5rem;
     text-align: center;
 }
-.mein-name {
-    letter-spacing: 6px;
+
+.card[data-card="choose"] {
+    background: linear-gradient(135deg, #c78772 0%, #072326 100%);
 }
+
+.card[data-card="choose"] h2 {
+    text-shadow: var(--shadow-dark);
+}
+
+.card[data-card="choose"] .content {
+    width: 400px;
+}
+
+.card[data-card="itler"] {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card[data-card="jurist"] {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.card[data-card="tech"] {
+    background: linear-gradient(135deg, #43e97b 0%, #38a5f9 100%);
+}
+
+.card[data-card="tech"] h2 {
+    margin-bottom: var(--spacing-xxl);
+}
+
+.card[data-card="zertifikate"] {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    color: var(--color-dark-text);
+    transition: background var(--transition-standard), color var(--transition-standard);
+}
+
+.card[data-card="zertifikate"].dark-mode {
+    background: linear-gradient(135deg, #121212 0%, #192a56 100%);
+    color: var(--color-light-text);
+}
+
+.card[data-card="zertifikate"] h2 {
+    color: var(--color-dark-text);
+    text-shadow: 0px 3px 3px rgb(148, 148, 148);
+}
+
+.card[data-card="zertifikate"].dark-mode h2 {
+    color: var(--color-white);
+    text-shadow: 0px 3px 3px black;
+}
+
+.card[data-card="zertifikate"] .content,
+.card[data-card="zertifikate"] a,
+.card[data-card="zertifikate"] li {
+    color: var(--color-dark-text);
+}
+
+.card[data-card="zertifikate"] a:hover {
+    color: #0a78b0;
+}
+
+.card[data-card="zertifikate"].dark-mode .content {
+    color: var(--color-light-text);
+}
+
+.card[data-card="zertifikate"].dark-mode li {
+    color: var(--color-white);
+}
+
+.card[data-card="ende"] {
+    background: linear-gradient(135deg, #fa709a 0%, #e6aa20 100%);
+}
+
+.card[data-card="ende"] h2 {
+    font-size: var(--font-size-xxlarge);
+}
+
+
+/* ==========================================================
+    LANDING PAGE SPEZIFISCHE ELEMENTE
+========================================================== */
+.hello {
+    font-size: var(--font-size-huge);
+    letter-spacing: 2px;
+}
+
+.bego {
+    font-size: var(--font-size-massive);
+    margin-bottom: var(--spacing-huge);
+}
+
 .name {
     font-family: "Russo One", sans-serif;
     font-size: 1.7rem;
-    text-shadow: 0px 2px 3px rgb(127, 127, 127);
+    text-shadow: 0px 2px 3px var(--color-gray);
 }
+
+.mein-name {
+    letter-spacing: 6px;
+}
+
 .name-zr {
     letter-spacing: 5px;
 }
-.deko1 {
-    background-color: white;
-    width: 62%;
-    height: 3px;
-    margin-bottom: 1.5rem;
-}
+
 .das-ist {
     letter-spacing: 3px;
 }
+
 .unterst {
     letter-spacing: 8px;
     margin-right: 8px;
 }
+
 .name-proj {
     letter-spacing: 15px;
 }
+
 .left-text, .right-text {
     font-family: sans-serif;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
     margin-top: 5rem;
 }
 
 
-
-/* Choose Your Character ------------------------------------ */
-.card[data-card="choose"] {
-    /*background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);*/
-    background: linear-gradient(135deg, #c78772 0%, #072326 100%);
-    /*background-color: rgb(230, 170, 20);*/
-}
-
-.card[data-card="choose"] h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    /*text-shadow: 0px 3px 3px rgb(127, 127, 127);*/
-    text-shadow: 0px 3px 3px rgb(50, 50, 50);
-}
-.card[data-card="choose"] .content {
-    max-width: 400px;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    line-height: 2rem;
-}
+/* ==========================================================
+    CHARACTER SELECTION
+========================================================== */
 .char-title {
     font-family: "Russo One", sans-serif;
-    font-style: normal;
-    font-size: 1.5rem;
+    font-size: var(--font-size-large);
     position: relative;
-    top: 40px;
+    top: var(--spacing-lg);
     display: flex;
     justify-content: space-around;
 }
-.deko2 {
-    position: relative;
-    top: 0px;
-    background-color: white;
-    height: 260px;
-    width: 4px;
-    margin: 0;
+
+img.choose {
+    width: 170px;
+    border: 2px solid var(--color-white);
+    border-radius: var(--spacing-md);
 }
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+}
+
 .upper-text, .lower-text {
     font-family: sans-serif;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
 }
 .upper-text-shift {
     position: relative;
-    top: 2rem;
+    top: var(--spacing-xl);
 }
-/* Choose One Arrow Lower Text - Mobile: "wischen" anzeigen, "verschieben" verstecken */
-.lower-mobile { display: inline; }
-.lower-desktop { display: none; }
 
-
-
-/* Der ITler ------------------------------------------------ */
-.card[data-card="itler"] {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    /*background-color: rgb(230, 170, 20);*/
+/* Mobile/Desktop Text Toggles */
+.lower-mobile, .left-mobile, .right-mobile {
+    display: inline;
 }
-.card[data-card="itler"] h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-shadow: 0px 3px 3px rgb(127, 127, 127);
-}
-.card[data-card="itler"] .content {
-    max-width: 300px;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    line-height: 2rem;
-    text-align: justify;
+.lower-desktop, .left-desktop, .right-desktop {
+    display: none;
 }
 
 
-
-/* Der Jurist ----------------------------------------------- */
-.card[data-card="jurist"] {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    /*background-color: rgb(230, 170, 20);*/
-}
-.card[data-card="jurist"] h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    text-shadow: 0px 3px 3px rgb(127, 127, 127);
-}
-.card[data-card="jurist"] .content {
-    max-width: 300px;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    text-align: justify;
-}
-/* Progress Circles */
+/* ==========================================================
+    PROGRESS CIRCLES (Jurist Card)
+========================================================== */
 .progress-item {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: var(--spacing-sm);
     margin: 15px 0;
+}
+.progress-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
 }
 .progress-circle {
     position: relative;
@@ -249,7 +405,7 @@ img.choose {
 }
 .progress-circle-fill {
     fill: none;
-    stroke: white;
+    stroke: var(--color-white);
     stroke-width: 8;
     stroke-linecap: round;
     stroke-dasharray: 0 1000;
@@ -260,104 +416,38 @@ img.choose {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.2rem;
-    color: white;
+    font-size: var(--font-size-medium);
+    color: var(--color-white);
 }
 .progress-text {
     font-family: sans-serif;
-    font-size: 1.2rem;
+    font-size: var(--font-size-medium);
     line-height: 1.5rem;
     text-align: left;
 }
 
 
-
-/* Angewandte Technologien ---------------------------------- */
-.card[data-card="tech"] {
-    background: linear-gradient(135deg, #43e97b 0%, #38a5f9 100%);
-    /*background-color: rgb(230, 170, 20);*/
-}
-.card[data-card="tech"] h2 {
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    text-shadow: 0px 3px 3px rgb(127, 127, 127);
-}
-.card[data-card="tech"] .content {
-    max-width: 300px;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    line-height: 2rem;
-    text-align: justify;
-}
-.deko3 {
-    background-color: white;
-    width: 100%;
-    height: 3px;
-    margin: 2rem 0;
-}
+/* ==========================================================
+    TECH CARD SPEZIFISCH
+========================================================== */
 li {
-    margin-left: 40px;
+    margin-left: var(--spacing-lg);
 }
+
 .small-text {
-    font-size: 0.9rem;
+    font-size: var(--font-size-small);
 }
 
 
-
-/* Zertifikate ---------------------------------------------- */
-.card[data-card="zertifikate"] {
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-    /*background-color: rgb(230, 170, 20);*/
-    color: #464646;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-.card[data-card="zertifikate"].dark-mode {
-    background: linear-gradient(135deg, #121212 0%, #192a56 100%);
-    /*background-color: rgb(230, 170, 20);*/
-    color: #e0e0e0;
-}
-.card[data-card="zertifikate"] h2 {
-    font-size: 2rem;
-    margin-bottom: 4rem;
-    color: #464646;
-    text-shadow: 0px 3px 3px rgb(148, 148, 148);
-}
-.card[data-card="zertifikate"].dark-mode h2 {
-    /*font-size: 2rem;
-    margin-bottom: 4rem;*/
-    color: #ffffff;
-    text-shadow: 0px 3px 3px black;
-}
-.card[data-card="zertifikate"] .content {
-    max-width: 300px;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    line-height: 2rem;
-    text-align: justify;
-    color: #464646;
-}
-.card[data-card="zertifikate"] a {
-    color: #464646;
-}.card[data-card="zertifikate"] a:hover {
-    color: #0a78b0;
-}
-.card[data-card="zertifikate"].dark-mode .content {
-    color: #e0e0e0;
-}
-.card[data-card="zertifikate"] li {
-    font-family: sans-serif;
-    color: #464646;
-}
-.card[data-card="zertifikate"].dark-mode li {
-    color: #ffffff;
-}
-/* Dark Mode Toggle Button */
+/* ==========================================================
+    DARK MODE TOGGLE
+========================================================== */
 .dark-mode-toggle {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: var(--spacing-lg);
+    height: var(--spacing-lg);
     background: rgba(255, 255, 255, 0.3);
     border: 2px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
@@ -365,8 +455,8 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+    font-size: var(--font-size-medium);
+    transition: all var(--transition-standard);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 .dark-mode-toggle:hover {
@@ -376,39 +466,18 @@ li {
 .dark-mode-toggle:active {
     transform: scale(0.95);
 }
+
 .card[data-card="zertifikate"].dark-mode .dark-mode-toggle {
     background: rgba(0, 0, 0, 0.4);
     border-color: rgba(255, 255, 255, 0.2);
 }
 
 
+/* ==========================================================
+    BUTTONS
+========================================================== */
 
-/* Danke schön ---------------------------------------------- */
-.card[data-card="ende"] {
-    background: linear-gradient(135deg, #fa709a 0%, #e6aa20 100%);
-    /*background-color: rgb(230, 170, 20);*/
-}
-.card[data-card="ende"] h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-shadow: 0px 3px 3px rgb(127, 127, 127);
-}
-.card[data-card="ende"] .content {
-    max-width: 300px;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    line-height: 2rem;
-    text-align: justify;
-}
-.deko4 {
-    background-color: white;
-    width: 75%;
-    height: 3px;
-    margin-bottom: 2rem;
-}
-
-
-/* Home Button --------------------------------------------- */
+/* Home Button */
 .home-button {
     border: none;
     background: none;
@@ -426,30 +495,7 @@ li {
     top: 0;
 }
 
-
-/* Arrow Animations ----------------------------------------- */
-/* Text um den Button herum */
-.action-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-}
-/* Landing Page Arrow Left Text - Mobile: "nach oben" anzeigen, "hier" verstecken */
-.left-mobile {
-    display: inline;
-}
-.left-desktop {
-    display: none;
-}
-/* Landing Page Arrow Right Text - Mobile: "wischen" anzeigen, "klicken" verstecken */
-.right-mobile {
-    display: inline;
-}
-.right-desktop {
-    display: none;
-}
-/* Arrow Button und seine Teile */
+/* Arrow Buttons */
 .arrow-button {
     border: none;
     background: none;
@@ -462,11 +508,11 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: var(--font-size-base);
 }
 .arrow {
-    font-size: 2.5rem;
-    margin-top: 1rem;
+    font-size: var(--font-size-xxlarge);
+    margin-top: var(--font-size-base);
 }
 .arrow-left {
     transform: rotate(-90deg);
@@ -474,7 +520,8 @@ li {
 .arrow-right {
     transform: rotate(90deg);
 }
-/* Mögliche Arrow-Animationen */
+
+/* Arrow Animations */
 .arrow-bounce-down {
     animation: bounce-down 1s infinite ease-in-out;
 }
@@ -497,30 +544,60 @@ li {
     50% { transform: translateX(12px); }
 }
 
-/* Text-Button-Text Section */
+/* Navigation Button */
+.nav-button {
+    padding: 15px var(--spacing-md);
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    color: var(--color-white);
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 3px solid var(--color-white);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all var(--transition-standard);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.nav-button:hover {
+    background-color: var(--color-white);
+    color: #333;
+    transform: scale(1.05);
+}
+
+
+/* ==========================================================
+    LAYOUT CONTAINERS
+========================================================== */
+.action-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
 .container {
     display: flex;
-    flex-wrap: wrap;            /* falls auf sehr schmalen Screens doch umbrechen soll */
-    gap: 0x;                    /* Abstand zwischen den Divs */
-    justify-content: center;    /* zentriert, falls der Platz nicht reicht */
-    padding: 20px;
+    flex-wrap: wrap;
+    gap: 0;
+    justify-content: center;
+    padding: var(--spacing-md);
 }
 .box {
-    flex: 0 0 auto;             /* verhindert, dass Flex sie vergrößert/verkleinert */
+    flex: 0 0 auto;
 }
-.box1 {                         /* diese Box ist für Texte auf der linken Seite des Buttons */
+.box1 {
     width: 100px;
     display: flex;
     justify-content: flex-end;
     position: relative;
     top: -22px;
 }
-.box2 {                         /* diese Box ist für den Button */
+.box2 {
     width: 70px;
     display: flex;
     justify-content: center;
 }
-.box3 {                         /* diese Box ist für Texte auf der rechten Seite des Buttons */
+.box3 {
     width: 100px;
     display: flex;
     justify-content: flex-start;
@@ -528,65 +605,69 @@ li {
     top: -22px;
 }
 
-/* Navigation Button ---------------------------------------- */
-.nav-button {
-    padding: 15px 20px;
-    font-size: 1rem;
-    font-weight: 700;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    border: 3px solid white;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-.nav-button:hover {
-    background-color: white;
-    color: #333;
-    transform: scale(1.05);
-}
-
 .centered-div {
     width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-.margin-bottom {
-    margin-bottom: 10px;
+    align-items: center;
 }
 
-/* Media Query ---------------------------------------------- */
+.margin-bottom {
+    margin-bottom: var(--spacing-sm);
+}
+
+
+/* ==========================================================
+    MEDIA QUERIES
+========================================================== */
 @media (min-width: 1900px) {
     .card { height: 100vh; }
 
     .hello { font-size: 7em; letter-spacing: 5px; }
-    .bego { font-size: 9rem; }
-    .card[data-card="landing"] p { font-size: 2.4rem; max-width: 600px; }
-    .card[data-card="choose"] p { font-size: 2.4rem; max-width: 2000px; }
-    .mein-name {letter-spacing: 6px;}
-    .name { font-size: 3.5rem; line-height: 5rem; }
-    .deko1 { width: 16%; height: 3px; }
-    .das-ist { letter-spacing: 1px; }
-    .unterst { letter-spacing: 8px; line-height: 5rem; }
-    .name-proj { letter-spacing: 21px; }
-    .arrow { font-size: 3rem; }
+    .bego { font-size: 9rem; }    
+    .card[data-card="landing"] p { font-size: 2.4rem; max-width: 600px; }    
+    .name { font-size: 3.5rem; line-height: 5rem; }    
+    .deko1 { width: 16%; }    
+    .unterst { line-height: 5rem; }    
+    .name-proj { letter-spacing: 21px; }    
+    .arrow { font-size: 3rem; }    
+    .left-mobile, .right-mobile, .lower-mobile { display: none; }    
+    .left-desktop, .right-desktop, .lower-desktop { display: inline; }
 
-    /* Landing Page Arrow Left Text - Desktop: "hier" anzeigen, "nach oben" verstecken */
-    .left-mobile { display: none; }
-    .left-desktop { display: inline; }
-    /* Landing Page Arrow Right Text - Desktop: "wischen" anzeigen, "klicken" verstecken */
-    .right-mobile { display: none; }
-    .right-desktop { display: inline; }
-    /* Choose card Arrow Lower Text - Desktop: "verschieben" anzeigen, "wischen" verstecken */
-    .lower-mobile { display: none; }
-    .lower-desktop { display: inline; }
+    .card .content { max-width: 600px; }
 
-    .container { flex-wrap: nowrap; }   /* erzwingt eine Zeile */
+    .card[data-card="choose"] .content { width: 600px; }    
+    .card[data-card="choose"] h2 { font-size: 3.5rem; }    
+    .card[data-card="choose"] p { font-size: 2.4rem; max-width: 600px; }    
+    .char-title { font-size: var(--font-size-xlarge); }    
+    img.choose { width: 320px; }    
+    .deko2 { height: 480px; width: var(--spacing-lg); }    
+    .navigation { width: 25%; }
+
+    .card[data-card="jurist"] h2 { font-size: 3.5rem; }
+    .progress-circle { width: 120px; height: 120px; }
+    .progress-number { font-size: 1.8rem; }
+    
+    .card[data-card="zertifikate"] h2 { font-size: 3.5rem; }
+        
+    .card[data-card="itler"] h2 { font-size: 3.5rem; }
+
+    .centered-div { width: 600px; }
+
+    .nav-button { width: 300px; }
+    
+    .card[data-card="tech"] h2 { font-size: 3.5rem; }
+    
+    .card[data-card="ende"] h2 { font-size: 3.5rem; }
+
+    .container { flex-wrap: nowrap; }
+
+    .deko4 { width: 17%; }
+    
+    .card[data-card="ende"] .content { max-width: 360px; }
 }
 
 @media (max-width: 420px) {
-    .container { flex-wrap: nowrap; }   /* erzwingt eine Zeile */
+    .container { flex-wrap: nowrap; }
 }

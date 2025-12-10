@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------
     CSS für persönliche Portfolio-Seite
     Autor: Zoltan Ress
-    Datum: 2025-12-05
+    Datum: 2025-12-10
 ----------------------------------------------------------- */
 
 * {
@@ -31,10 +31,8 @@ body {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 93vh;
+    height: 100vh;
     padding: 20px 10px;
-    border: 10px solid rgb(127, 127, 127);
-    border-radius: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -69,8 +67,6 @@ body {
     width: 96vw;
     height: 91vh;
     padding: 20px 10px;
-    border: 10px solid rgb(127, 127, 127);
-    border-radius: 40px;
     background: rgba(63, 63, 63, 0.9);
     z-index: 10;
     justify-content: center;
@@ -129,4 +125,8 @@ body {
 .back-button:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
+}
+
+@media (min-width: 481px) {
+    .video-modal { width: 100vw; height: 100vh; }
 }

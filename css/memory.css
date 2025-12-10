@@ -1,7 +1,7 @@
 /* -----------------------------------------------------------
     CSS für persönliche Portfolio-Seite
     Autor: Zoltan Ress
-    Datum: 2025-12-09
+    Datum: 2025-12-10
 ----------------------------------------------------------- */
 
 * {
@@ -15,7 +15,6 @@ body {
     font-weight: 400;
     font-style: normal;
     overflow: hidden;
-    /*background-color: rgb(127, 127, 127);*/
     background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
     min-height: 100vh;
     display: flex;
