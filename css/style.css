@@ -546,6 +546,7 @@ li {
 
 /* Navigation Button */
 .nav-button {
+    width: 300px;
     padding: 15px var(--spacing-md);
     font-size: var(--font-size-base);
     font-weight: 700;
