@@ -90,47 +90,47 @@
                         <span>Der ITler</span>
                     </div>
                     <div style="display: flex; flex-flow: row nowrap; gap: 0px; justify-content: center; align-items: center;">
-                        <img src="img/ChooseChar1.jpg" alt="Der Jurist" class="choose">
+                        <img class="choose" src="img/ChooseChar1.jpg" alt="Der Jurist">
                         <hr class="deko2">
-                        <img src="img/ChooseChar2.jpg" alt="Der ITler" class="choose">
+                        <img class="choose" src="img/ChooseChar2.jpg" alt="Der ITler">
                     </div>
                 </div>
 
-                <div class="upper-text-shift" style="display: flex; justify-content: space-between; width: 85%;">
-                    <span class="upper-text">nach rechts</span>
-                    <span class="upper-text">nach links</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; width: 85%;">
-                    <!-- Navigation 2.2 (Button nach rechts) -->
-                    <button class="arrow-button" onclick="navigateCard('choose', 'jurist', 'right')">
-                        <div class="arrow-circle arrow-bounce-left">
-                            <svg class="arrow arrow-bounce-left" width="50" height="50" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
-                                <path d="M6 12h12m0 0l-4-4m4 4l-4 4"
-                                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                    </button>
+                    <div class="navigation upper-text-shift">
+                        <span class="upper-text">nach rechts</span>
+                        <span class="upper-text">nach links</span>
+                    </div>
+                    <div class="navigation">
+                        <!-- Navigation 2.2 (Button nach rechts) -->
+                        <button class="arrow-button" onclick="navigateCard('choose', 'jurist', 'right')">
+                            <div class="arrow-circle arrow-bounce-left">
+                                <svg class="arrow arrow-bounce-left" width="50" height="50" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                                    <path d="M6 12h12m0 0l-4-4m4 4l-4 4"
+                                    stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </button>
 
-                    <!-- Navigation 2.3 (Button nach links) -->
-                    <button class="arrow-button" onclick="navigateCard('choose', 'itler', 'left')">
-                        <div class="arrow-circle arrow-bounce-right">
-                            <svg class="arrow arrow-bounce-right" width="50" height="50" viewBox="0 0 24 24">
-                                <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
-                                <path d="M18 12H6m0 0l4-4m-4 4l4 4"
-                                stroke="rgb(127,127,127)" stroke-width="3" fill="none"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                    </button>
-                </div>
-                <div style="display: flex; justify-content: space-between; width: 85%;">
-                    <span class="lower-text lower-mobile">wischen</span>
-                    <span class="lower-text lower-mobile">wischen</span>
-                    <span class="lower-text lower-desktop">verschieben</span>
-                    <span class="lower-text lower-desktop">verschieben</span>
-                </div>
+                        <!-- Navigation 2.3 (Button nach links) -->
+                        <button class="arrow-button" onclick="navigateCard('choose', 'itler', 'left')">
+                            <div class="arrow-circle arrow-bounce-right">
+                                <svg class="arrow arrow-bounce-right" width="50" height="50" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" fill="white" />
+                                    <path d="M18 12H6m0 0l4-4m-4 4l4 4"
+                                    stroke="rgb(127,127,127)" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="navigation">
+                        <span class="lower-text lower-mobile">wischen</span>
+                        <span class="lower-text lower-mobile">wischen</span>
+                        <span class="lower-text lower-desktop">verschieben</span>
+                        <span class="lower-text lower-desktop">verschieben</span>
+                    </div>
             </div>
 
 
@@ -142,7 +142,7 @@
                     <p>Als Junior Developer bin ich auf ständiges Lernen ausgerichtet. 
                         Ich kann mich in fast jede Technologie zügig einarbeiten. 
                         Ich kann sogar den Zauberwürfel bauen! Siehe da:<br><br></p>
-                    <div class="centered-div">
+                    <div class="centered-div" style="text-align: center;">
                         <button class="nav-button margin-bottom" onclick="window.open('html/calculator.html', '_blank')">🧮 Taschenrechner</button>
                         <button class="nav-button margin-bottom" onclick="window.open('html/todo.html', '_blank')">📋 Simple ToDo List</button>
                         <button class="nav-button" onclick="window.open('html/memory.html', '_blank')">🥸 Memory Game Demo</button>
@@ -186,7 +186,7 @@
                     Lebensraum: Der Wald der Paragrafen und Klauseln.
                 </div>
                 
-                <div style="display: flex; flex-direction: column; justify-content: flex-start;">
+                <div class="progress-container">
                     <div class="progress-item">
                         <div class="progress-circle">
                             <svg viewBox="0 0 120 120">
